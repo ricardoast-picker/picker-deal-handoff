@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Handoff — Ricardo Astorga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f1f5f9; --w: #fff; --f: #f8fafc;
+      --bdr: #e2e8f0; --bdr2: #cbd5e1;
+      --txt: #0f172a; --soft: #475569; --muted: #94a3b8;
+      --cel: #0891b2; --cel-l: #e0f2fe;
+      --grn: #16a34a; --grn-l: #dcfce7;
+      --amb: #d97706; --amb-l: #fef3c7;
+      --pur: #7c3aed; --pur-l: #ede9fe;
+      --red: #dc2626;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--txt); padding: 48px 56px; }
+
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid var(--cel); }
+    .page-title { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
+    .page-title span { color: var(--cel); }
+    .page-meta { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; text-align: right; line-height: 1.8; }
+
+    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--cel); margin: 32px 0 12px; }
+
+    .deal-grid { display: flex; flex-direction: column; gap: 12px; }
+
+    .deal-card { background: var(--w); border: 1px solid var(--bdr); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .deal-card.proc  { border-left: 5px solid #2563eb; }
+    .deal-card.neg   { border-left: 5px solid #d97706; }
+    .deal-card.pilot { border-left: 5px solid #0891b2; }
+    .deal-card.prop  { border-left: 5px solid #16a34a; }
+    .deal-card.intro { border-left: 5px solid #94a3b8; }
+
+    .deal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--f); border-bottom: 1px solid var(--bdr); gap: 12px; }
+    .deal-name { font-size: 17px; font-weight: 800; color: var(--txt); }
+    .deal-flag { font-size: 15px; }
+    .deal-env  { font-size: 13px; font-weight: 700; color: var(--cel); }
+    .deal-head-left { display: flex; align-items: center; gap: 12px; }
+    .deal-head-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .badge { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 5px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+    .b-proc  { background: #dbeafe; color: #1e40af; }
+    .b-neg   { background: #fef3c7; color: #92400e; }
+    .b-pilot { background: var(--cel-l); color: #0e7490; }
+    .b-prop  { background: var(--grn-l); color: #15803d; }
+    .b-intro { background: #f1f5f9; color: #64748b; border: 1px solid var(--bdr); }
+
+    .deal-body { display: grid; grid-template-columns: 240px 1fr; gap: 0; }
+
+    .deal-contact { padding: 16px 20px; border-right: 1px solid var(--bdr); background: #fafbfc; }
+    .col-label { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .contact-name { font-size: 14px; font-weight: 800; color: var(--txt); margin-bottom: 2px; }
+    .contact-role { font-size: 12px; font-weight: 500; color: var(--soft); margin-bottom: 6px; }
+    .contact-ch   { font-size: 11px; font-weight: 600; color: var(--cel); }
+
+    .deal-right { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+    .deal-summary { font-size: 13px; font-weight: 500; color: var(--soft); line-height: 1.6; }
+    .deal-next { display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; background: var(--f); border: 1px solid var(--bdr); border-radius: 8px; }
+    .next-arrow { font-size: 14px; font-weight: 900; color: var(--cel); flex-shrink: 0; margin-top: 1px; }
+    .next-text  { font-size: 13px; font-weight: 700; color: var(--txt); line-height: 1.5; }
+
+    .deal-next.hot { background: #eff6ff; border-color: #bfdbfe; }
+    .deal-next.hot .next-arrow { color: #2563eb; }
+    .deal-next.green { background: var(--grn-l); border-color: #86efac; }
+    .deal-next.green .next-arrow { color: var(--grn); }
+
+    .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--bdr); font-size: 11px; color: var(--muted); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <div>
+    <div class="page-title">Deal Handoff — <span>Ricardo Astorga</span></div>
+    <div style="font-size:14px;color:var(--soft);font-weight:500;margin-top:6px;">Pipeline activo al 27 de Julio, 2026</div>
+  </div>
+  <div class="page-meta">
+    Picker Express<br>
+    9 deals activos<br>
+    27 Jul 2026
+  </div>
+</div>
+
+
+<!-- ── PROCUREMENT ── -->
+<div class="section-label">Procurement &amp; Legal — Más cercanos al cierre</div>
+<div class="deal-grid">
+
+  <div class="deal-card proc">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇴</span>
+        <span class="deal-name">Coopidrogas</span>
+        <span class="deal-env">6k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Camilo Torres</div>
+        <div class="contact-role">Coordinador de Convenios Logísticos</div>
+        <div class="contact-ch">WhatsApp · Champion</div>
+        <div style="margin-top:10px;">
+          <div class="contact-name" style="font-size:13px;">Daniel González</div>
+          <div class="contact-role">Equipo de Camilo · Influenciador interno</div>
+        </div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">Cooperativa con 10,159 droguerías afiliadas en Colombia. 6k envíos/mes base. Pain: gestión fragmentada de carriers, SLA roto en horas pico. Sesión 1 (intro), Sesión 2 (demo técnica), Sesión 3 (propuesta 16-jul). Hoy 27-jul: ajustes a propuesta presentados con seguro 2% incluido. Mandan documentos de alta de proveedor. Contrato enviado a revisión. Avanzan.</div>
+        <div class="deal-next green">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Firma de contrato + confirmar fecha de onboarding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deal-card proc">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇪🇨</span>
+        <span class="deal-name">Encebollados CDL</span>
+        <span class="deal-env">2k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Víctor Dueñas</div>
+        <div class="contact-role">Dueño / Economic Buyer</div>
+        <div class="contact-ch">WhatsApp · Decisor directo</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">5 locales en Guayaquil, Ecuador. 2k envíos/mes. Referido por Ricardo Mancero (Qik). Pain: dependencia de plataformas externas sin canal propio. Demo realizada, avanzan con piloto. Contrato enviado a revisión.</div>
+        <div class="deal-next hot">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Firma de contrato + definir fecha de arranque de piloto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deal-card proc">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇲🇽</span>
+        <span class="deal-name">Grupo Nikkori</span>
+        <span class="deal-env">400 propios · 40k plataformas</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Lupita</div>
+        <div class="contact-role">Operaciones / Decisora</div>
+        <div class="contact-ch">Email: plataformas@</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">Grupo de 23+ sucursales de restaurantes japoneses en 12 ciudades de México. 400 envíos propios/mes + 40k en plataformas. Pain: dependencia total de marketplaces. Intro Meeting 7-jul, contrato enviado para revisión.</div>
+        <div class="deal-next hot">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Firma de contrato por parte de Lupita</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ── NEGOTIATION ── -->
+<div class="section-label">Negotiation</div>
+<div class="deal-grid">
+
+  <div class="deal-card neg">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇴</span>
+        <span class="deal-name">Salvator's Pizza &amp; Pasta</span>
+        <span class="deal-env">11k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-neg">Negotiation</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Guillermo</div>
+        <div class="contact-role">Champion interno</div>
+        <div class="contact-ch">WhatsApp · Canal principal</div>
+        <div style="margin-top:10px;">
+          <div class="contact-name" style="font-size:13px;">William</div>
+          <div class="contact-role">CEO · Decisor final</div>
+        </div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">23 locales en Colombia, 11k envíos/mes. Pain: flota propia con costo de COP $77M/mes. Demo realizada, propuesta presentada v4. En revisión de contrato — Guillermo comparte observaciones con Irene (legal interno). Intención de avance confirmada.</div>
+        <div class="deal-next hot">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Vobo final de Irene (legal) → agendar firma y fecha de onboarding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ── PILOT DEFINITION ── -->
+<div class="section-label">Pilot Definition</div>
+<div class="deal-grid">
+
+  <div class="deal-card pilot">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇴</span>
+        <span class="deal-name">Droguerías 9192</span>
+        <span class="deal-env">18k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-pilot">Pilot Definition</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Gonzalo Idarraga</div>
+        <div class="contact-role">Gerente General</div>
+        <div class="contact-ch">WhatsApp · Tope de escalación</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">18k envíos/mes en Colombia. Piloto de 20 días aprobado internamente. Pain: costos de flota y saturación en horas pico. Business case presentado. Sesión de definición de piloto pendiente — alineando fecha con área Tech.</div>
+        <div class="deal-next hot">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Confirmar fecha con Tech para sesión de definición de piloto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ── PROPOSAL ── -->
+<div class="section-label">P&amp;L &amp; Proposal</div>
+<div class="deal-grid">
+
+  <div class="deal-card prop">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇴</span>
+        <span class="deal-name">Papa Johns &amp; El Corral</span>
+        <span class="deal-env">34k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-prop">Proposal</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Patricia Torres</div>
+        <div class="contact-role">Directora de Tech · DM confirmada</div>
+        <div class="contact-ch">Email · Decisora del proceso</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">101 locales de Papa John's + El Corral en Colombia bajo Grupo Nutresa. 34k envíos/mes. Pain: dependencia de plataformas, sin canal de delivery propio. Propuesta presentada. Sesión técnica #2 realizada hoy 27-jul con Patricia Torres (DM confirmada).</div>
+        <div class="deal-next hot">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Resultado de sesión técnica de hoy → sesión financiera con Patricia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deal-card prop">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇱</span>
+        <span class="deal-name">Cruz Verde CL &amp; Maicao</span>
+        <span class="deal-env">30k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-prop">Proposal</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Luis</div>
+        <div class="contact-role">Operaciones · Cruz Verde / Maicao</div>
+        <div class="contact-ch">WhatsApp · Canal principal</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">Cruz Verde Chile + Maicao. 30k envíos/mes. Propuesta enviada por JD. Luis pide 1 semana para revisar internamente la propuesta antes de agendar sesión de respuesta.</div>
+        <div class="deal-next">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Contactar Luis semana del 4-ago para agendar sesión de respuesta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ── INTRO MEETING ── -->
+<div class="section-label">Intro Meeting — Recién entrados al pipeline</div>
+<div class="deal-grid">
+
+  <div class="deal-card intro">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇲🇽</span>
+        <span class="deal-name">MacStore México</span>
+        <span class="deal-env">7k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-intro">Intro Meeting</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Por confirmar</div>
+        <div class="contact-role">Operaciones / Logística</div>
+        <div class="contact-ch">En proceso de mapeo</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">Cadena de retail de productos Apple en México. 7k envíos/mes, modelo ondemand. Intro Meeting realizada esta semana. Pain: sin canal de delivery propio eficiente para entregas ondemand.</div>
+        <div class="deal-next">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Agendar Discovery &amp; Demo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deal-card intro">
+    <div class="deal-head">
+      <div class="deal-head-left">
+        <span class="deal-flag">🇨🇴</span>
+        <span class="deal-name">Salchimonster</span>
+        <span class="deal-env">3k envíos/mes</span>
+      </div>
+      <div class="deal-head-right"><span class="badge b-intro">Intro Meeting</span></div>
+    </div>
+    <div class="deal-body">
+      <div class="deal-contact">
+        <div class="col-label">Contacto principal</div>
+        <div class="contact-name">Bryan</div>
+        <div class="contact-role">Operaciones · Champion</div>
+        <div class="contact-ch">WhatsApp · Canal principal</div>
+      </div>
+      <div class="deal-right">
+        <div class="deal-summary">12+ locales en Bogotá, Cali y Medellín. 3k envíos/mes. Pain: mala experiencia con canal propio anterior — churn de ARMI. Intro Call exitosa 21-jul, pain validado, interesados en avanzar.</div>
+        <div class="deal-next">
+          <div class="next-arrow">→</div>
+          <div class="next-text">Confirmar fecha + email de Bryan para agendar Demo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="footer">
+  Preparado por Ricardo Astorga · Picker Express · 27 de Julio 2026 · Pipeline activo — versión preliminar para traspaso
+</div>
+
+</body>
+</html>

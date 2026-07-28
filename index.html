@@ -51,10 +51,12 @@
     .next-text { font-size: 12px; font-weight: 700; color: #0f172a; line-height: 1.5; }
 
     .footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; font-weight: 500; }
-    .stats-bar { display: flex; gap: 24px; margin-bottom: 32px; }
-    .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 20px; text-align: center; }
+    .stats-bar { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+    .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 20px; text-align: center; text-decoration: none; transition: all 0.15s; cursor: pointer; display: block; }
+    .stat:hover { border-color: #0891b2; box-shadow: 0 0 0 3px #e0f2fe; transform: translateY(-1px); }
     .stat-num { font-size: 22px; font-weight: 900; color: #0891b2; }
     .stat-label { font-size: 10px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+    .section-anchor { scroll-margin-top: 24px; }
   </style>
 </head>
 <body>
@@ -72,16 +74,16 @@
 </div>
 
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Procurement</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Negotiation</div></div>
-  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Pilot</div></div>
-  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Proposal</div></div>
-  <div class="stat"><div class="stat-num">11</div><div class="stat-label">Discovery</div></div>
-  <div class="stat"><div class="stat-num">3 (+3)</div><div class="stat-label">Intro Meeting</div></div>
+  <a href="#sec-procurement" class="stat"><div class="stat-num">3</div><div class="stat-label">Procurement</div></a>
+  <a href="#sec-negotiation" class="stat"><div class="stat-num">3</div><div class="stat-label">Negotiation</div></a>
+  <a href="#sec-pilot" class="stat"><div class="stat-num">1</div><div class="stat-label">Pilot</div></a>
+  <a href="#sec-proposal" class="stat"><div class="stat-num">6</div><div class="stat-label">Proposal</div></a>
+  <a href="#sec-discovery" class="stat"><div class="stat-num">11</div><div class="stat-label">Discovery</div></a>
+  <a href="#sec-intro" class="stat"><div class="stat-num">3</div><div class="stat-label">Intro Meeting</div></a>
 </div>
 
 
-  <div class="section-label">Procurement — Más cercanos al cierre</div>
+  <div id="sec-procurement" class="section-anchor section-label">Procurement — Más cercanos al cierre</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #2563eb">
         <div class="deal-head">
@@ -195,7 +197,7 @@
         </div>
       </div></div>
 
-  <div class="section-label">Negotiation</div>
+  <div id="sec-negotiation" class="section-anchor section-label">Negotiation</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #d97706">
         <div class="deal-head">
@@ -324,7 +326,7 @@
         </div>
       </div></div>
 
-  <div class="section-label">Pilot Definition</div>
+  <div id="sec-pilot" class="section-anchor section-label">Pilot Definition</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #0891b2">
         <div class="deal-head">
@@ -359,7 +361,7 @@
         </div>
       </div></div>
 
-  <div class="section-label">P&L & Proposal</div>
+  <div id="sec-proposal" class="section-anchor section-label">P&L & Proposal</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #16a34a">
         <div class="deal-head">
@@ -574,7 +576,7 @@
         </div>
       </div></div>
 
-  <div class="section-label">Discovery</div>
+  <div id="sec-discovery" class="section-anchor section-label">Discovery</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #94a3b8">
         <div class="deal-head">
@@ -1090,7 +1092,7 @@
         </div>
       </div></div>
 
-  <div class="section-label">Intro Meeting</div>
+  <div id="sec-intro" class="section-anchor section-label">Intro Meeting</div>
   <div class="deal-grid">
       <div class="deal-card" style="border-left: 5px solid #cbd5e1">
         <div class="deal-head">

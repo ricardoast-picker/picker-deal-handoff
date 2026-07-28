@@ -101,7 +101,8 @@
   <button class="tab active" data-tab="intro"        onclick="switchTab('intro')"        style="--tc:#94a3b8">Intro Meeting <span class="tab-count">4</span></button>
   <button class="tab"        data-tab="discovery"    onclick="switchTab('discovery')"    style="--tc:#64748b">Discovery     <span class="tab-count">1</span></button>
   <button class="tab"        data-tab="proposal"     onclick="switchTab('proposal')"     style="--tc:#16a34a">Proposal      <span class="tab-count">4</span></button>
-  <button class="tab"        data-tab="negotiation"  onclick="switchTab('negotiation')"  style="--tc:#d97706">Negotiation   <span class="tab-count">5</span></button>
+  <button class="tab"        data-tab="negotiation"  onclick="switchTab('negotiation')"  style="--tc:#d97706">Negotiation   <span class="tab-count">4</span></button>
+  <button class="tab"        data-tab="pilot"        onclick="switchTab('pilot')"        style="--tc:#6366f1">Pilot Definition <span class="tab-count">1</span></button>
   <button class="tab"        data-tab="procurement"  onclick="switchTab('procurement')"  style="--tc:#2563eb">Procurement   <span class="tab-count">3</span></button>
 </div>
 
@@ -594,49 +595,6 @@
       </div>
     </div>
 
-    <!-- 9192 -->
-    <div class="deal-card" style="border-left:5px solid #d97706">
-      <div class="deal-head">
-        <div class="deal-head-left">
-          <span class="deal-flag">🇨🇴</span>
-          <span class="deal-name">Droguerías 9192</span>
-        </div>
-        <div class="deal-head-right">
-          <span class="owner-badge owner-ra">Ricardo</span>
-          <span class="ses-badge">8 sesiones</span>
-          <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
-        </div>
-      </div>
-      <div class="deal-kpis">
-        <div class="kpi-item">
-          <div class="kpi-label">Envíos / mes</div>
-          <div class="kpi-value cel">18.000</div>
-        </div>
-        <div class="kpi-item">
-          <div class="kpi-label">Revenue est.</div>
-          <div class="kpi-value muted">—</div>
-        </div>
-      </div>
-      <div class="deal-body">
-        <div class="deal-contacts">
-          <div class="col-label">Contactos</div>
-          <div class="contact-item">
-            <div class="contact-name">Gonzalo Idarraga</div>
-            <div class="contact-role">Gerente General · Decisor / escalación</div>
-            <div class="contact-email">gerencia@droguerias9192.com</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-name">Santiago</div>
-            <div class="contact-role">Operaciones · contacto operativo</div>
-          </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
-        </div>
-        <div class="deal-right">
-          <div class="deal-summary">18k env/mes Colombia. Piloto de 20 días aprobado internamente. 8 sesiones. Gonzalo Idarraga (GG) es el decisor. Santiago es el contacto operativo del día a día. Pain: SLA roto, saturación hora pico.</div>
-          <div class="deal-next"><div class="next-arrow">→</div><div class="next-text">Confirmar fecha con Tech para sesión de definición de alcance del piloto</div></div>
-        </div>
-      </div>
-    </div>
 
     <!-- Cruz Verde Colombia (JD) -->
     <div class="deal-card" style="border-left:5px solid #d97706">
@@ -734,6 +692,58 @@
         <div class="deal-right">
           <div class="deal-summary">11,500 env/mes Colombia. Deal en negociación manejado por JD. Sirley Alvarez como champion operativo, Calvachi como DM financiero y Fabián Forero como Director Financiero. También hay equipo técnico (Mauricio Forero, Johan Sotomayor). Contexto detallado con JD.</div>
           <div class="deal-next"><div class="next-arrow">→</div><div class="next-text">Consultar estado actual con JD — deal en negociación con múltiples stakeholders</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PILOT DEFINITION
+════════════════════════════════════════════ -->
+<div id="panel-pilot" class="panel">
+  <div class="deal-grid">
+
+    <!-- 9192 -->
+    <div class="deal-card" style="border-left:5px solid #6366f1">
+      <div class="deal-head">
+        <div class="deal-head-left">
+          <span class="deal-flag">🇨🇴</span>
+          <span class="deal-name">Droguerías 9192</span>
+        </div>
+        <div class="deal-head-right">
+          <span class="owner-badge owner-ra">Ricardo</span>
+          <span class="badge" style="background:#ede9fe;color:#4338ca;">Pilot Definition</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">18.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
+        </div>
+      </div>
+      <div class="deal-body">
+        <div class="deal-contacts">
+          <div class="col-label">Contactos</div>
+          <div class="contact-item">
+            <div class="contact-name">Gonzalo Idarraga</div>
+            <div class="contact-role">Gerente General · Decisor / escalación</div>
+            <div class="contact-email">gerencia@droguerias9192.com</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-name">Santiago</div>
+            <div class="contact-role">Operaciones · contacto operativo</div>
+          </div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+        </div>
+        <div class="deal-right">
+          <div class="deal-summary">18k env/mes Colombia. Piloto 20 días aprobado. Gonzalo Idarraga (GG) es el decisor. Santiago es el contacto operativo. Pain: SLA roto, saturación hora pico. Equipo técnico validó viabilidad de integración — sesión técnica agendada para el viernes.</div>
+          <div class="deal-next"><div class="next-arrow">→</div><div class="next-text">Viernes: sesión técnica integración ERP — enviar documentación de integración antes de la reunión</div></div>
         </div>
       </div>
     </div>

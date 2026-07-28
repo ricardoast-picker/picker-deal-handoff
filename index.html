@@ -3,72 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deal Handoff — Ricardo Astorga</title>
+  <title>Deal Handoff — Ricardo Astorga · Picker</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f1f5f9; --w: #fff; --f: #f8fafc;
-      --bdr: #e2e8f0; --bdr2: #cbd5e1;
-      --txt: #0f172a; --soft: #475569; --muted: #94a3b8;
-      --cel: #0891b2; --cel-l: #e0f2fe;
-      --grn: #16a34a; --grn-l: #dcfce7;
-      --amb: #d97706; --amb-l: #fef3c7;
-      --pur: #7c3aed; --pur-l: #ede9fe;
-      --red: #dc2626;
-    }
-    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--txt); padding: 48px 56px; }
+    body { font-family: 'Montserrat', sans-serif; background: #f1f5f9; color: #0f172a; padding: 48px 56px; }
 
-    .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid var(--cel); }
-    .page-title { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
-    .page-title span { color: var(--cel); }
-    .page-meta { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; text-align: right; line-height: 1.8; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid #0891b2; }
+    .page-title { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
+    .page-title span { color: #0891b2; }
+    .page-subtitle { font-size: 13px; color: #64748b; font-weight: 500; margin-top: 6px; }
+    .page-meta { font-size: 11px; font-weight: 600; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; text-align: right; line-height: 1.8; }
 
-    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--cel); margin: 32px 0 12px; }
+    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: #0891b2; margin: 32px 0 10px; }
 
-    .deal-grid { display: flex; flex-direction: column; gap: 12px; }
+    .deal-grid { display: flex; flex-direction: column; gap: 10px; }
 
-    .deal-card { background: var(--w); border: 1px solid var(--bdr); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    .deal-card.proc  { border-left: 5px solid #2563eb; }
-    .deal-card.neg   { border-left: 5px solid #d97706; }
-    .deal-card.pilot { border-left: 5px solid #0891b2; }
-    .deal-card.prop  { border-left: 5px solid #16a34a; }
-    .deal-card.intro { border-left: 5px solid #94a3b8; }
+    .deal-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
 
-    .deal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: var(--f); border-bottom: 1px solid var(--bdr); gap: 12px; }
-    .deal-name { font-size: 17px; font-weight: 800; color: var(--txt); }
+    .deal-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; gap: 12px; }
     .deal-flag { font-size: 15px; }
-    .deal-env  { font-size: 13px; font-weight: 700; color: var(--cel); }
-    .deal-head-left { display: flex; align-items: center; gap: 12px; }
-    .deal-head-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .deal-name { font-size: 15px; font-weight: 800; }
+    .deal-env { font-size: 12px; font-weight: 700; color: #0891b2; }
+    .deal-head-left { display: flex; align-items: center; gap: 10px; }
+    .deal-head-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
-    .badge { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 5px; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
-    .b-proc  { background: #dbeafe; color: #1e40af; }
-    .b-neg   { background: #fef3c7; color: #92400e; }
-    .b-pilot { background: var(--cel-l); color: #0e7490; }
-    .b-prop  { background: var(--grn-l); color: #15803d; }
-    .b-intro { background: #f1f5f9; color: #64748b; border: 1px solid var(--bdr); }
+    .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 5px; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+    .ses-badge { font-size: 10px; font-weight: 700; color: #64748b; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
 
-    .deal-body { display: grid; grid-template-columns: 240px 1fr; gap: 0; }
+    .deal-body { display: grid; grid-template-columns: 220px 1fr; }
 
-    .deal-contact { padding: 16px 20px; border-right: 1px solid var(--bdr); background: #fafbfc; }
-    .col-label { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-    .contact-name { font-size: 14px; font-weight: 800; color: var(--txt); margin-bottom: 2px; }
-    .contact-role { font-size: 12px; font-weight: 500; color: var(--soft); margin-bottom: 6px; }
-    .contact-ch   { font-size: 11px; font-weight: 600; color: var(--cel); }
+    .deal-contacts { padding: 14px 16px; border-right: 1px solid #e2e8f0; background: #fafbfc; }
+    .col-label { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px; }
+    .contact-item { margin-bottom: 10px; }
+    .contact-name { font-size: 13px; font-weight: 700; color: #0f172a; }
+    .contact-role { font-size: 11px; color: #475569; font-weight: 500; margin-top: 1px; }
+    .contact-email { font-size: 10px; color: #0891b2; font-weight: 600; margin-top: 2px; word-break: break-all; }
 
-    .deal-right { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
-    .deal-summary { font-size: 13px; font-weight: 500; color: var(--soft); line-height: 1.6; }
-    .deal-next { display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; background: var(--f); border: 1px solid var(--bdr); border-radius: 8px; }
-    .next-arrow { font-size: 14px; font-weight: 900; color: var(--cel); flex-shrink: 0; margin-top: 1px; }
-    .next-text  { font-size: 13px; font-weight: 700; color: var(--txt); line-height: 1.5; }
+    .prop-link { display: inline-block; margin-top: 4px; font-size: 10px; font-weight: 700; color: #0891b2; text-decoration: none; }
+    .prop-link:hover { text-decoration: underline; }
+    .prop-link-pending { font-size: 10px; font-weight: 600; color: #94a3b8; }
 
-    .deal-next.hot { background: #eff6ff; border-color: #bfdbfe; }
-    .deal-next.hot .next-arrow { color: #2563eb; }
-    .deal-next.green { background: var(--grn-l); border-color: #86efac; }
-    .deal-next.green .next-arrow { color: var(--grn); }
+    .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .deal-summary { font-size: 12px; font-weight: 500; color: #475569; line-height: 1.65; }
+    .deal-next { display: flex; align-items: flex-start; gap: 8px; padding: 9px 13px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; }
+    .next-arrow { font-size: 13px; font-weight: 900; color: #0891b2; flex-shrink: 0; }
+    .next-text { font-size: 12px; font-weight: 700; color: #0f172a; line-height: 1.5; }
 
-    .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--bdr); font-size: 11px; color: var(--muted); font-weight: 500; }
+    .footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; font-weight: 500; }
+    .stats-bar { display: flex; gap: 24px; margin-bottom: 32px; }
+    .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 20px; text-align: center; }
+    .stat-num { font-size: 22px; font-weight: 900; color: #0891b2; }
+    .stat-label { font-size: 10px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
   </style>
 </head>
 <body>
@@ -76,295 +62,1136 @@
 <div class="page-header">
   <div>
     <div class="page-title">Deal Handoff — <span>Ricardo Astorga</span></div>
-    <div style="font-size:14px;color:var(--soft);font-weight:500;margin-top:6px;">Pipeline activo al 27 de Julio, 2026</div>
+    <div class="page-subtitle">Pipeline activo al 27 de Julio 2026 · Fuente: Picker Hub + memoria de sesiones</div>
   </div>
   <div class="page-meta">
     Picker Express<br>
-    9 deals activos<br>
+    30 deals activos<br>
     27 Jul 2026
   </div>
 </div>
 
-
-<!-- ── PROCUREMENT ── -->
-<div class="section-label">Procurement &amp; Legal — Más cercanos al cierre</div>
-<div class="deal-grid">
-
-  <div class="deal-card proc">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇴</span>
-        <span class="deal-name">Coopidrogas</span>
-        <span class="deal-env">6k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Camilo Torres</div>
-        <div class="contact-role">Coordinador de Convenios Logísticos</div>
-        <div class="contact-ch">WhatsApp · Champion</div>
-        <div style="margin-top:10px;">
-          <div class="contact-name" style="font-size:13px;">Daniel González</div>
-          <div class="contact-role">Equipo de Camilo · Influenciador interno</div>
-        </div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">Cooperativa con 10,159 droguerías afiliadas en Colombia. 6k envíos/mes base. Pain: gestión fragmentada de carriers, SLA roto en horas pico. Sesión 1 (intro), Sesión 2 (demo técnica), Sesión 3 (propuesta 16-jul). Hoy 27-jul: ajustes a propuesta presentados con seguro 2% incluido. Mandan documentos de alta de proveedor. Contrato enviado a revisión. Avanzan.</div>
-        <div class="deal-next green">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Firma de contrato + confirmar fecha de onboarding</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="deal-card proc">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇪🇨</span>
-        <span class="deal-name">Encebollados CDL</span>
-        <span class="deal-env">2k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Víctor Dueñas</div>
-        <div class="contact-role">Dueño / Economic Buyer</div>
-        <div class="contact-ch">WhatsApp · Decisor directo</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">5 locales en Guayaquil, Ecuador. 2k envíos/mes. Referido por Ricardo Mancero (Qik). Pain: dependencia de plataformas externas sin canal propio. Demo realizada, avanzan con piloto. Contrato enviado a revisión.</div>
-        <div class="deal-next hot">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Firma de contrato + definir fecha de arranque de piloto</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="deal-card proc">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇲🇽</span>
-        <span class="deal-name">Grupo Nikkori</span>
-        <span class="deal-env">400 propios · 40k plataformas</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-proc">Procurement</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Lupita</div>
-        <div class="contact-role">Operaciones / Decisora</div>
-        <div class="contact-ch">Email: plataformas@</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">Grupo de 23+ sucursales de restaurantes japoneses en 12 ciudades de México. 400 envíos propios/mes + 40k en plataformas. Pain: dependencia total de marketplaces. Intro Meeting 7-jul, contrato enviado para revisión.</div>
-        <div class="deal-next hot">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Firma de contrato por parte de Lupita</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Procurement</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Negotiation</div></div>
+  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Pilot</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Proposal</div></div>
+  <div class="stat"><div class="stat-num">11</div><div class="stat-label">Discovery</div></div>
+  <div class="stat"><div class="stat-num">3 (+3)</div><div class="stat-label">Intro Meeting</div></div>
 </div>
 
 
-<!-- ── NEGOTIATION ── -->
-<div class="section-label">Negotiation</div>
-<div class="deal-grid">
-
-  <div class="deal-card neg">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇴</span>
-        <span class="deal-name">Salvator's Pizza &amp; Pasta</span>
-        <span class="deal-env">11k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-neg">Negotiation</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Guillermo</div>
-        <div class="contact-role">Champion interno</div>
-        <div class="contact-ch">WhatsApp · Canal principal</div>
-        <div style="margin-top:10px;">
-          <div class="contact-name" style="font-size:13px;">William</div>
-          <div class="contact-role">CEO · Decisor final</div>
+  <div class="section-label">Procurement — Más cercanos al cierre</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #2563eb">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Coopidrogas</span>
+            <span class="deal-env">6.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">8 sesiones</span>
+            <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Jhonathan  Torres</div>
+              <div class="contact-role">Gerente Comercial/Marketplace</div>
+              <div class="contact-email">j.torresm@coopidrogas.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Jose Orjuela</div>
+              <div class="contact-role">Director de Logistica</div>
+              <div class="contact-email">g.orjuela@coopidrogas.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Andrea Puentes</div>
+              <div class="contact-role">Directora de Compras</div>
+              <div class="contact-email">a.puentes@coopidrogas.com.co</div>
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-coopidrogas-propuesta.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Cooperativa con 10,159 droguerías afiliadas. 6k env/mes base. Sesiones: intro → demo → propuesta pt.1 → propuesta pt.2 (16-jul) → ajuste propuesta 27-jul. Fee $1,700 COP + seguro 2%. Camilo Torres es el decision maker real. Daniel González gestiona internamente. Proceso: Área → Gerencia Comercial → Comité.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Firma de contrato + confirmar fecha de onboarding</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="deal-right">
-        <div class="deal-summary">23 locales en Colombia, 11k envíos/mes. Pain: flota propia con costo de COP $77M/mes. Demo realizada, propuesta presentada v4. En revisión de contrato — Guillermo comparte observaciones con Irene (legal interno). Intención de avance confirmada.</div>
-        <div class="deal-next hot">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Vobo final de Irene (legal) → agendar firma y fecha de onboarding</div>
+      <div class="deal-card" style="border-left: 5px solid #2563eb">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇪🇨</span>
+            <span class="deal-name">Encebollado Cuarto de Libra EC</span>
+            <span class="deal-env">2.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Victor Dueñas</div>
+              <div class="contact-role">Gerente de Operaciones o Logística</div>
+              <div class="contact-email">victorduenas1@gmail.com</div>
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-encebollados.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">5 locales en Guayaquil. 2k env/mes. Referido por Ricardo Mancero (Qik). Demo realizada. Contrato enviado a revisión a Víctor Dueñas (dueño/decisor directo).</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Firma de contrato + definir fecha de arranque de piloto</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="deal-card" style="border-left: 5px solid #2563eb">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">Grupo Nikkori</span>
+            <span class="deal-env">400 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Lupita</div>
+              <div class="contact-role">Coordinadora de Logística</div>
+              <div class="contact-email">lupita@gruponikkori.com.mx</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Plataformas</div>
+              <div class="contact-role">Coordinador de Plataformas Digitales</div>
+              <div class="contact-email">plataformas@gruponikkori.com.mx</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">23+ sucursales de restaurantes japoneses en 12 ciudades MX. 400 env/mes propios + ~40k en plataformas. Intro Meeting 7-jul. Contrato enviado para revisión a Lupita (Coordinadora de Logística, decisora operativa).</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Firma de contrato por parte de Lupita</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
 
-</div>
-
-
-<!-- ── PILOT DEFINITION ── -->
-<div class="section-label">Pilot Definition</div>
-<div class="deal-grid">
-
-  <div class="deal-card pilot">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇴</span>
-        <span class="deal-name">Droguerías 9192</span>
-        <span class="deal-env">18k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-pilot">Pilot Definition</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Gonzalo Idarraga</div>
-        <div class="contact-role">Gerente General</div>
-        <div class="contact-ch">WhatsApp · Tope de escalación</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">18k envíos/mes en Colombia. Piloto de 20 días aprobado internamente. Pain: costos de flota y saturación en horas pico. Business case presentado. Sesión de definición de piloto pendiente — alineando fecha con área Tech.</div>
-        <div class="deal-next hot">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Confirmar fecha con Tech para sesión de definición de piloto</div>
+  <div class="section-label">Negotiation</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #d97706">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Salvator's Pizza CO</span>
+            <span class="deal-env">11.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">10 sesiones</span>
+            <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Guillerno Peña</div>
+              <div class="contact-role">Operaciones (Champion)</div>
+              
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">William  Dau</div>
+              <div class="contact-role">CEO</div>
+              <div class="contact-email">William.dau@cucinare.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Alvaro Rebolledo</div>
+              <div class="contact-role">Director de Tecnología</div>
+              
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-salvators.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">23 locales en Colombia. 11k env/mes. COP $77M/mes en flota propia. Demo, discovery, propuesta y negociación realizadas. Contrato en revisión legal con Irene (equipo legal de Salvators). Guillermo Peña es champion, William Dau es CEO y decisor final.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Vobo final de Irene (legal) → agendar firma y onboarding</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- ── PROPOSAL ── -->
-<div class="section-label">P&amp;L &amp; Proposal</div>
-<div class="deal-grid">
-
-  <div class="deal-card prop">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇴</span>
-        <span class="deal-name">Papa Johns &amp; El Corral</span>
-        <span class="deal-env">34k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-prop">Proposal</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Patricia Torres</div>
-        <div class="contact-role">Directora de Tech · DM confirmada</div>
-        <div class="contact-ch">Email · Decisora del proceso</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">101 locales de Papa John's + El Corral en Colombia bajo Grupo Nutresa. 34k envíos/mes. Pain: dependencia de plataformas, sin canal de delivery propio. Propuesta presentada. Sesión técnica #2 realizada hoy 27-jul con Patricia Torres (DM confirmada).</div>
-        <div class="deal-next hot">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Resultado de sesión técnica de hoy → sesión financiera con Patricia</div>
+      <div class="deal-card" style="border-left: 5px solid #d97706">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Locatel Colombia</span>
+            <span class="deal-env">11.500 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">0 sesiones</span>
+            <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Alvarez Sirley</div>
+              <div class="contact-role">Gerente de Proyecto</div>
+              <div class="contact-email">alvarez.sirley@locatelcolombia.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Jose Ignacio Calvachi</div>
+              <div class="contact-role">Gerente de Operaciones/Logística</div>
+              <div class="contact-email">calvachi.jose@locatelcolombia.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Fabian Forero</div>
+              <div class="contact-role">Director Financiero</div>
+              <div class="contact-email">forero.fabian@locatelcolombia.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">11,500 env/mes. Deal en negociación según Hub. Contacto principal: Sirley Alvarez (Gerente de Proyecto, champion). José Ignacio Calvachi (Gerente de Operaciones, DM financiero). Deal avanzado pero sin reuniones registradas en actividades — puede estar siendo manejado directamente por otro AE.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Confirmar siguiente sesión con JD / equipo comercial</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="deal-card" style="border-left: 5px solid #d97706">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Cruz Verde Colombia</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">0 sesiones</span>
+            <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Nicolas Chavarro</div>
+              <div class="contact-role">Gerente de Operaciones Logísticas</div>
+              <div class="contact-email">nicolas.chavarro@cruzverde.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Norma Leon</div>
+              <div class="contact-role">Gerente de Logística</div>
+              <div class="contact-email">norma.leon@cruzverde.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Michael Parra</div>
+              <div class="contact-role">Líder Técnico de Integración</div>
+              <div class="contact-email">michael.vargas@cruzverde.com.co</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Cruz Verde Colombia (distinto a Cruz Verde CL). Deal en etapa negociación según Hub. Múltiples stakeholders: Sandra Vargas (VP Negocios Digitales), Norma Leon (Gerente de Logística), Nicolas Chavarro (Gerente Ops Logísticas). Deal puede estar manejado por otro AE.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Consultar estado actual con JD — deal en negociación sin reuniones recientes registradas</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
 
-  <div class="deal-card prop">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇱</span>
-        <span class="deal-name">Cruz Verde CL &amp; Maicao</span>
-        <span class="deal-env">30k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-prop">Proposal</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Luis</div>
-        <div class="contact-role">Operaciones · Cruz Verde / Maicao</div>
-        <div class="contact-ch">WhatsApp · Canal principal</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">Cruz Verde Chile + Maicao. 30k envíos/mes. Propuesta enviada por JD. Luis pide 1 semana para revisar internamente la propuesta antes de agendar sesión de respuesta.</div>
-        <div class="deal-next">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Contactar Luis semana del 4-ago para agendar sesión de respuesta</div>
+  <div class="section-label">Pilot Definition</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #0891b2">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Droguerias 9192</span>
+            <span class="deal-env">18.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">8 sesiones</span>
+            <span class="badge" style="background:#e0f2fe;color:#0e7490;">Pilot Definition</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Gonzalo Idarraga</div>
+              <div class="contact-role">Gerente General</div>
+              <div class="contact-email">gerencia@droguerias9192.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">18k env/mes. Piloto de 20 días aprobado internamente. Gonzalo Idarraga (GG) es el decisor/escalación. Santiago (equipo Ops, no registrado en Hub) y Gonzalo manejan el proceso. 8 sesiones registradas. Pain: SLA roto, rider costs.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Confirmar fecha con Tech para definición de alcance del piloto 20 días</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+  <div class="section-label">P&L & Proposal</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Papa John's CO</span>
+            <span class="deal-env">10.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">14 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Patricia Padilla</div>
+              <div class="contact-role">Contacto</div>
+              <div class="contact-email">ypbobadilla@alimentosalconsumidor.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Patricia Torres</div>
+              <div class="contact-role">Líder de Delivery Canales Propios</div>
+              <div class="contact-email">ctorres@alimentosalconsumidor.co</div>
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Papa John's Colombia (Grupo Nutresa) — 101 locales con El Corral. 10k env/mes PJ. 14 sesiones registradas. Patricia Torres (Líder Delivery Canales Propios) es la DM confirmada. Propuesta enviada. 2a sesión técnica realizada hoy 27-jul. Claudia/Luis/Marcela también involucrados.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Resultado sesión técnica 27-jul → sesión financiera con Patricia Torres</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- ── INTRO MEETING ── -->
-<div class="section-label">Intro Meeting — Recién entrados al pipeline</div>
-<div class="deal-grid">
-
-  <div class="deal-card intro">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇲🇽</span>
-        <span class="deal-name">MacStore México</span>
-        <span class="deal-env">7k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-intro">Intro Meeting</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Por confirmar</div>
-        <div class="contact-role">Operaciones / Logística</div>
-        <div class="contact-ch">En proceso de mapeo</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">Cadena de retail de productos Apple en México. 7k envíos/mes, modelo ondemand. Intro Meeting realizada esta semana. Pain: sin canal de delivery propio eficiente para entregas ondemand.</div>
-        <div class="deal-next">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Agendar Discovery &amp; Demo</div>
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">El Corral</span>
+            <span class="deal-env">24.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">5 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            <div class="contact-item"><div class="contact-name">Sin contactos en Hub</div></div>
+            <div style="margin-top:10px;"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">El Corral (Grupo Nutresa) — mismo deal que Papa John's CO. 24k env/mes. 5 sesiones registradas. Patricia Torres maneja ambos deals (PJ + El Corral) como parte de Grupo Nutresa. La sesión técnica de hoy 27-jul cubre ambos.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Resultado sesión técnica 27-jul → sesión financiera con Patricia Torres</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="deal-card intro">
-    <div class="deal-head">
-      <div class="deal-head-left">
-        <span class="deal-flag">🇨🇴</span>
-        <span class="deal-name">Salchimonster</span>
-        <span class="deal-env">3k envíos/mes</span>
-      </div>
-      <div class="deal-head-right"><span class="badge b-intro">Intro Meeting</span></div>
-    </div>
-    <div class="deal-body">
-      <div class="deal-contact">
-        <div class="col-label">Contacto principal</div>
-        <div class="contact-name">Bryan</div>
-        <div class="contact-role">Operaciones · Champion</div>
-        <div class="contact-ch">WhatsApp · Canal principal</div>
-      </div>
-      <div class="deal-right">
-        <div class="deal-summary">12+ locales en Bogotá, Cali y Medellín. 3k envíos/mes. Pain: mala experiencia con canal propio anterior — churn de ARMI. Intro Call exitosa 21-jul, pain validado, interesados en avanzar.</div>
-        <div class="deal-next">
-          <div class="next-arrow">→</div>
-          <div class="next-text">Confirmar fecha + email de Bryan para agendar Demo</div>
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇱</span>
+            <span class="deal-name">Cruz Verde CL</span>
+            <span class="deal-env">30.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">3 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Camilo Palomo</div>
+              <div class="contact-role">Contacto</div>
+              <div class="contact-email">camilo.palomo@cruzverde.cl</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Cruz Verde Chile + Maicao. 30k env/mes. 3 sesiones. Propuesta enviada por JD a Luis (Operaciones). Piden 1 semana para revisión interna antes de agendar sesión de respuesta. Camilo Palomo es el contacto registrado en Hub.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Contactar a Luis semana del 4-ago — piden 1 semana para revisar propuesta internamente</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Parque Arauco Colombia</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">0 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Katherine Alvarez</div>
+              <div class="contact-role">Gerente de Operaciones</div>
+              <div class="contact-email">katherine.alvarez@parauco.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Katherine Alvarez</div>
+              <div class="contact-role">Jefe de Omnicanalidad</div>
+              <div class="contact-email">katherine.alvarez@parauco.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Deal de alianza de canal (Nuevo Negocio). Katherine Alvarez como champion. Propuesta en estado Hub. Volumen de envíos no definido (modelo de alianza, no cliente directo).</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Confirmar estado de propuesta — alianza canal con Katherine Alvarez</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇵🇦</span>
+            <span class="deal-name">Domino's Pizza Panamá</span>
+            <span class="deal-env">40.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">0 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Daniel Lasso</div>
+              <div class="contact-role">Delivery / POS</div>
+              <div class="contact-email">daniel.l@dominospanama.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Eddiel</div>
+              <div class="contact-role">Gerente de Operaciones</div>
+              <div class="contact-email">eddiel@dominospanama.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Jose Urraca</div>
+              <div class="contact-role">Comercial / Decisor</div>
+              <div class="contact-email">jose@dominospanama.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">40k env/mes. Propuesta enviada según Hub. Múltiples stakeholders técnicos y comerciales: José Urraca (Comercial/Decisor), Daniel Lasso (Delivery/POS), Michael Berkman (Pagos), Eddiel (Gerente de Ops).</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Confirmar estado de propuesta y siguiente sesión</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #16a34a">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">CAFFENIO</span>
+            <span class="deal-env">15.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">0 sesiones</span>
+            <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Tania Gallego</div>
+              <div class="contact-role">Consumption Center Coordinator</div>
+              <div class="contact-email">tania.gallego@caffenio.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Manuel Almada</div>
+              <div class="contact-role">B2B Digital Specialist</div>
+              <div class="contact-email">manuel.estrada@caffenio.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">15k env/mes, cafeterías. Propuesta activa de $900K MXN en Hub, cierre estimado jul-31-2026. Tania Gallego (Consumption Center Coordinator) y Manuel Almada (B2B Digital Specialist) son los contactos registrados.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Cerrar acuerdo — propuesta activa $900K MXN, cierre esperado jul-31</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
 
-</div>
+  <div class="section-label">Discovery</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">Farmacias Klyns</span>
+            <span class="deal-env">6.500 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">10 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Miguel Llama</div>
+              <div class="contact-role">Gerente de Operaciones o Logística</div>
+              <div class="contact-email">miguel.llama@klyns.mx</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Antonio Carreon Bustamante</div>
+              <div class="contact-role">Gerente de Operaciones</div>
+              <div class="contact-email">antonio.carreon@klyns.mx</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Lorenzo Edick Reyes Morales</div>
+              <div class="contact-role">Director de Operaciones</div>
+              
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-klyns.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">6,500 env/mes. 10 sesiones registradas. Miguel Llama (Gerente de Ops) es el champion. Deal pivotado a valor digital (no ahorro de flota). Propuesta v2 presentada. Deal activo pero sin movimiento reciente — verificar estado con Miguel.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Retomar deal — validar si propuesta v2 sigue activa con Miguel Llama</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Laika</span>
+            <span class="deal-env">1.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">6 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Leonardo Jimenez</div>
+              <div class="contact-role">Operaciones</div>
+              <div class="contact-email">nestor.jimenez@laika.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Sebastian Chacon</div>
+              <div class="contact-role">Supply Chain - Logistics BO</div>
+              <div class="contact-email">sebastian.corredor@laika.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Leonardo Jimenez</div>
+              <div class="contact-role">Gerente de Operaciones o Logística</div>
+              <div class="contact-email">leonardo.jimenez@laika.com.co</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">1k env/mes actuales, pero 80k/mes en canal express que buscan lanzar. 6 sesiones. Leonardo Jiménez (Ops) y Sebastián Chacón (Supply Chain). Deal trabado hace semanas en revisión de business case interno. Canal CEO-CEO disponible pero no usado.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Retomar con Leonardo Jiménez — BC trabado, canal express nuevo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Makro - Tipo III CO</span>
+            <span class="deal-env">300 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">4 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Omar Sastre</div>
+              <div class="contact-role">Gerente de Operaciones o E-commerce</div>
+              <div class="contact-email">aomar.sastre@makro.com.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Laura Aguirre</div>
+              <div class="contact-role">Contacto</div>
+              
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Carlos Arevalo</div>
+              <div class="contact-role">Jefe de Distribución y Transporte</div>
+              <div class="contact-email">carlos.arevalo@makro.com.co</div>
+            </div>
+            <div style="margin-top:10px;"><a href="https://picker-makro.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">22 tiendas en Colombia. 300 env/mes B2B HoReCa. 4 sesiones registradas. Omar Sastre (Coordinador de Transporte / E-commerce) es el champion. Maria Celedón (Jefe Ops Logística) es stakeholder. Deal en etapa discovery sin avance reciente.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Retomar con Omar Sastre — confirmar si aún es prioridad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🌎</span>
+            <span class="deal-name">Sline - Tipo 4 MX</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Eder Soria</div>
+              <div class="contact-role">Director Comercial o Socio</div>
+              <div class="contact-email">eder@winbacknow.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">Benedetti's</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Arturo Betanzos</div>
+              <div class="contact-role">Gerente de Logística o Delivery</div>
+              <div class="contact-email">jbetanzos@benedettis.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Edgar Ceron</div>
+              <div class="contact-role">Gerente de Operaciones o Expansión</div>
+              <div class="contact-email">eceron@benedettis.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Mar .</div>
+              <div class="contact-role">Administrativa</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">Wild Fork México</span>
+            <span class="deal-env">538 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Sebastian Gutierrez</div>
+              <div class="contact-role">Director de Producto / Tecnología</div>
+              <div class="contact-email">sebastian.gutierrez@wildfork.mx</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">Envíoclick</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Rosa Costes Vélez</div>
+              <div class="contact-role">Gerente de Operaciones</div>
+              <div class="contact-email">rosa@envioclick.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Alfredo Gonzalez</div>
+              <div class="contact-role">CTO o Gerente de Tecnología</div>
+              <div class="contact-email">alfredo.gonzalez@envioclick.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Rosa Costes</div>
+              <div class="contact-role">Gerente de Operaciones</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇱</span>
+            <span class="deal-name">Foochap</span>
+            <span class="deal-env">300 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Julian</div>
+              <div class="contact-role">CTO o Gerente de Tecnología</div>
+              <div class="contact-email">01@foochapp.com</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🌎</span>
+            <span class="deal-name">Jelou AI</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Edward Salvatierra</div>
+              <div class="contact-role">Account Manager</div>
+              <div class="contact-email">edward.salvatierra@jelou.ai</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Gissella Suntaxi</div>
+              <div class="contact-role">Customer Success Manager</div>
+              <div class="contact-email">gissella.suntaxi@jelou.ai</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Gabriela Bajana</div>
+              <div class="contact-role">Customer Success Manager</div>
+              <div class="contact-email">gabriela.bajana@jelou.ai</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Atrium</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            <div class="contact-item"><div class="contact-name">Sin contactos en Hub</div></div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇱</span>
+            <span class="deal-name">Get Agil CL</span>
+            <span class="deal-env">3.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Raúl Miranda</div>
+              <div class="contact-role">Contacto</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇱</span>
+            <span class="deal-name">Mercat CL</span>
+            <span class="deal-env">40.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Sebastian Segura</div>
+              <div class="contact-role">Contacto</div>
+              <div class="contact-email">sebastian@mercat.cl</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇱</span>
+            <span class="deal-name">eDarkstore</span>
+            <span class="deal-env">5.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Cristian Ausin</div>
+              <div class="contact-role">Contacto</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Unidrogas </span>
+            <span class="deal-env">140.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Carlos  Franco Arias</div>
+              <div class="contact-role">Director de Ventas y Operaciones</div>
+              
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Jose Espinosa</div>
+              <div class="contact-role">CCO</div>
+              <div class="contact-email">lidernacionalventas@unidrogas.net.co</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-name">Carlos Moreno</div>
+              <div class="contact-role">Coordinador</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Por definir</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+  <div class="section-label">Intro Meeting</div>
+  <div class="deal-grid">
+      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇲🇽</span>
+            <span class="deal-name">MacStore MX</span>
+            <span class="deal-env">7.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">2 sesiones</span>
+            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Mónica Barragán</div>
+              <div class="contact-role">Gerente de Logística y Operaciones</div>
+              <div class="contact-email">monica.barragan@macstore.mx</div>
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Cadena de retail Apple en México. 7k env/mes, modelo ondemand. Intro Meeting realizada esta semana. Mónica Barragán (Gerente de Logística y Operaciones) es el contacto registrado. Pain: sin canal propio de delivery eficiente para entregas ondemand.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Agendar Discovery & Demo con Mónica Barragán</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Oakberry</span>
+            <span class="deal-env">Canal nuevo</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Daniel Felipe  Zuluaga</div>
+              <div class="contact-role">Contacto</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">Oakberry Colombia. 0 env/mes (canal nuevo). 1 sesión. Deal de construcción de canal propio desde cero. Contacto: Daniel Felipe Zuluaga.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Agendar siguiente sesión — tipo 0 (nuevo canal)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+        <div class="deal-head">
+          <div class="deal-head-left">
+            <span class="deal-flag">🇨🇴</span>
+            <span class="deal-name">Salchimonster</span>
+            <span class="deal-env">3.000 env/mes</span>
+          </div>
+          <div class="deal-head-right">
+            <span class="ses-badge">1 sesión</span>
+            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+          </div>
+        </div>
+        <div class="deal-body">
+          <div class="deal-contacts">
+            <div class="col-label">Contactos</div>
+            
+            <div class="contact-item">
+              <div class="contact-name">Bryan</div>
+              <div class="contact-role">Champion Operaciones</div>
+              
+            </div>
+            <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          </div>
+          <div class="deal-right">
+            <div class="deal-summary">12+ locales en Bogotá, Cali y Medellín. 3k env/mes. Bryan (champion, WhatsApp). Churn de ARMI. Intro Call exitosa 21-jul — pain validado, interesados en avanzar a Demo.</div>
+            <div class="deal-next">
+              <div class="next-arrow">→</div>
+              <div class="next-text">Confirmar fecha + email de Bryan para agendar Demo</div>
+            </div>
+          </div>
+        </div>
+      </div></div>
 
 
 <div class="footer">
-  Preparado por Ricardo Astorga · Picker Express · 27 de Julio 2026 · Pipeline activo — versión preliminar para traspaso
+  Preparado por Ricardo Astorga · Picker Express · 27 de Julio 2026 · Datos del Hub actualizados al 27 jul 2026. Este documento es confidencial y de uso interno.
 </div>
 
 </body>

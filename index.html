@@ -39,7 +39,7 @@
     .deal-head-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
     .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 5px; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
-    .ses-badge { font-size: 10px; font-weight: 700; color: #64748b; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+    .ses-badge { display: none; }
 
     .owner-badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 5px; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
     .owner-ra  { background: #0891b2; color: #fff; }
@@ -56,9 +56,9 @@
     .contact-ch { font-size: 10px; font-weight: 700; color: #0891b2; margin-top: 2px; }
     .contact-email { font-size: 10px; color: #0891b2; font-weight: 600; margin-top: 2px; word-break: break-all; }
 
-    .prop-link { display: inline-block; margin-top: 4px; font-size: 10px; font-weight: 700; color: #0891b2; text-decoration: none; }
-    .prop-link:hover { text-decoration: underline; }
-    .prop-link-pending { font-size: 10px; font-weight: 600; color: #94a3b8; }
+    .prop-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 6px 12px; background: #0891b2; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: background 0.15s; }
+    .prop-link:hover { background: #0e7490; }
+    .prop-link-pending { display: inline-flex; align-items: center; margin-top: 8px; padding: 6px 12px; background: #f1f5f9; color: #94a3b8; font-size: 10px; font-weight: 700; border-radius: 6px; border: 1px solid #e2e8f0; }
 
     .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
     .deal-summary { font-size: 12px; font-weight: 500; color: #475569; line-height: 1.65; }

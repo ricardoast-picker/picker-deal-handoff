@@ -75,9 +75,11 @@
     .kpi-value { font-size: 18px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; }
     .kpi-value.cel { color: #0891b2; }
     .kpi-value.muted { color: #cbd5e1; font-size: 15px; font-weight: 600; }
-    .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 12px; }
     .deal-summary { font-size: 13px; font-weight: 500; color: #475569; line-height: 1.65; }
-    .deal-next { display: flex; align-items: flex-start; gap: 8px; padding: 9px 13px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; }
+    .deal-summary::before { content: 'RESUMEN'; display: block; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94a3b8; margin-bottom: 6px; }
+    .deal-next { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; padding: 9px 13px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; }
+    .deal-next::before { content: 'NEXT STEPS'; flex-basis: 100%; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94a3b8; margin-bottom: 2px; }
     .next-arrow { font-size: 13px; font-weight: 900; color: #0891b2; flex-shrink: 0; }
     .next-text { font-size: 13px; font-weight: 700; color: #0f172a; line-height: 1.5; }
 

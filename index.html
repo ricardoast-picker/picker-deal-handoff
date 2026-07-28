@@ -66,6 +66,13 @@
     .contract-btn.active { background: #0f172a; color: #fff; border: none; cursor: pointer; }
     .contract-btn.active:hover { background: #1e293b; }
 
+    .deal-kpis { display: flex; gap: 0; border-bottom: 1px solid #e2e8f0; background: #fff; }
+    .kpi-item { flex: 1; padding: 10px 18px; border-right: 1px solid #e2e8f0; }
+    .kpi-item:last-child { border-right: none; }
+    .kpi-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #94a3b8; margin-bottom: 3px; }
+    .kpi-value { font-size: 18px; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; }
+    .kpi-value.cel { color: #0891b2; }
+    .kpi-value.muted { color: #cbd5e1; font-size: 14px; font-weight: 600; }
     .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
     .deal-summary { font-size: 12px; font-weight: 500; color: #475569; line-height: 1.65; }
     .deal-next { display: flex; align-items: flex-start; gap: 8px; padding: 9px 13px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px; }
@@ -108,12 +115,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇲🇽</span>
           <span class="deal-name">MacStore México</span>
-          <span class="deal-env">7.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">2 sesiones</span>
           <span class="badge" style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">Intro Meeting</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">7.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -139,12 +155,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Oakberry Colombia</span>
-          <span class="deal-env">Canal nuevo</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">1 sesión</span>
           <span class="badge" style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">Intro Meeting</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">Canal nuevo</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -169,12 +194,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Salchimonster</span>
-          <span class="deal-env">3.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">1 sesión</span>
           <span class="badge" style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">Intro Meeting</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">3.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -200,12 +234,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Unidrogas</span>
-          <span class="deal-env">140.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">1 sesión</span>
           <span class="badge" style="background:#f8fafc;color:#64748b;border:1px solid #e2e8f0;">Intro Meeting</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">140.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -244,12 +287,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇲🇽</span>
           <span class="deal-name">Casa Ley</span>
-          <span class="deal-env">45.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-jd">JD</span>
           <span class="ses-badge">Por confirmar</span>
           <span class="badge" style="background:#f1f5f9;color:#475569;">Discovery</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">45.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -282,12 +334,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇲🇽</span>
           <span class="deal-name">Grupo Nikkori</span>
-          <span class="deal-env">400 propios · ~40k plataformas</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">1 sesión</span>
           <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">400</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -318,12 +379,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Laika</span>
-          <span class="deal-env">80.000 env/mes (canal nuevo)</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">6 sesiones</span>
           <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">80.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -354,12 +424,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇱</span>
           <span class="deal-name">Cruz Verde Chile</span>
-          <span class="deal-env">30.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">3 sesiones</span>
           <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">30.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -385,12 +464,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Parque Arauco Colombia</span>
-          <span class="deal-env">Canal alianza</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-jd">JD</span>
           <span class="ses-badge">Por confirmar</span>
           <span class="badge" style="background:#dcfce7;color:#15803d;">Proposal</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">Canal alianza</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -425,12 +513,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">El Corral (Grupo Nutresa)</span>
-          <span class="deal-env">24.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">5 sesiones</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">24.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -456,12 +553,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Papa John's CO (Grupo Nutresa)</span>
-          <span class="deal-env">10.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">14 sesiones</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">10.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -492,12 +598,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Droguerías 9192</span>
-          <span class="deal-env">18.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">8 sesiones</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">18.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -527,12 +642,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Cruz Verde Colombia</span>
-          <span class="deal-env">Deal activo</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-jd">JD</span>
           <span class="ses-badge">Por confirmar</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">—</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -568,12 +692,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Locatel Colombia</span>
-          <span class="deal-env">11.500 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-jd">JD</span>
           <span class="ses-badge">Por confirmar</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;">Negotiation</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">11.500</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -618,12 +751,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Coopidrogas</span>
-          <span class="deal-env">6.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">8 sesiones</span>
           <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">6.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -659,12 +801,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇨🇴</span>
           <span class="deal-name">Salvator's Pizza &amp; Pasta</span>
-          <span class="deal-env">11.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">10 sesiones</span>
           <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">11.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">
@@ -699,12 +850,21 @@
         <div class="deal-head-left">
           <span class="deal-flag">🇪🇨</span>
           <span class="deal-name">Encebollados CDL</span>
-          <span class="deal-env">2.000 env/mes</span>
         </div>
         <div class="deal-head-right">
           <span class="owner-badge owner-ra">Ricardo</span>
           <span class="ses-badge">2 sesiones</span>
           <span class="badge" style="background:#dbeafe;color:#1e40af;">Procurement</span>
+        </div>
+      </div>
+      <div class="deal-kpis">
+        <div class="kpi-item">
+          <div class="kpi-label">Envíos / mes</div>
+          <div class="kpi-value cel">2.000</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Revenue est.</div>
+          <div class="kpi-value muted">—</div>
         </div>
       </div>
       <div class="deal-body">

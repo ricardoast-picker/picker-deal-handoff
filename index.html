@@ -7,15 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', sans-serif; background: #f1f5f9; color: #0f172a; padding: 48px 56px; }
+    body { font-family: 'Montserrat', sans-serif; background: #f1f5f9; color: #0f172a; padding: 40px 56px; }
 
-    .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid #0891b2; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #0891b2; }
     .page-title { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; }
     .page-title span { color: #0891b2; }
     .page-subtitle { font-size: 13px; color: #64748b; font-weight: 500; margin-top: 6px; }
     .page-meta { font-size: 11px; font-weight: 600; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; text-align: right; line-height: 1.8; }
 
-    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: #0891b2; margin: 32px 0 10px; }
+    /* TABS */
+    .tabs { display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+    .tab { display: flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 8px; border: 2px solid #e2e8f0; background: #fff; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: #64748b; cursor: pointer; transition: all 0.15s; }
+    .tab:hover { border-color: var(--tc); color: var(--tc); }
+    .tab.active { background: var(--tc); border-color: var(--tc); color: #fff; }
+    .tab-count { font-size: 11px; font-weight: 800; background: rgba(255,255,255,0.25); border-radius: 4px; padding: 1px 6px; }
+    .tab:not(.active) .tab-count { background: #f1f5f9; color: #94a3b8; }
+
+    /* PANELS */
+    .panel { display: none; }
+    .panel.active { display: block; }
 
     .deal-grid { display: flex; flex-direction: column; gap: 10px; }
 
@@ -37,6 +47,7 @@
     .col-label { font-size: 9px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94a3b8; margin-bottom: 8px; }
     .contact-item { margin-bottom: 10px; }
     .contact-name { font-size: 13px; font-weight: 700; color: #0f172a; }
+    .contact-name.muted { color: #94a3b8; font-weight: 500; }
     .contact-role { font-size: 11px; color: #475569; font-weight: 500; margin-top: 1px; }
     .contact-email { font-size: 10px; color: #0891b2; font-weight: 600; margin-top: 2px; word-break: break-all; }
 
@@ -50,13 +61,7 @@
     .next-arrow { font-size: 13px; font-weight: 900; color: #0891b2; flex-shrink: 0; }
     .next-text { font-size: 12px; font-weight: 700; color: #0f172a; line-height: 1.5; }
 
-    .footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; font-weight: 500; }
-    .stats-bar { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
-    .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 20px; text-align: center; text-decoration: none; transition: all 0.15s; cursor: pointer; display: block; }
-    .stat:hover { border-color: #0891b2; box-shadow: 0 0 0 3px #e0f2fe; transform: translateY(-1px); }
-    .stat-num { font-size: 22px; font-weight: 900; color: #0891b2; }
-    .stat-label { font-size: 10px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
-    .section-anchor { scroll-margin-top: 24px; }
+    .footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; font-weight: 500; }
   </style>
 </head>
 <body>
@@ -64,28 +69,24 @@
 <div class="page-header">
   <div>
     <div class="page-title">Deal Handoff — <span>Ricardo Astorga</span></div>
-    <div class="page-subtitle">Pipeline activo al 27 de Julio 2026 · Fuente: Picker Hub + memoria de sesiones</div>
+    <div class="page-subtitle">Pipeline activo al 27 de Julio 2026 · Fuente: Picker Hub + sesiones</div>
   </div>
-  <div class="page-meta">
-    Picker Express<br>
-    30 deals activos<br>
-    27 Jul 2026
-  </div>
+  <div class="page-meta">Picker Express · 30 deals · 27 Jul 2026</div>
 </div>
 
-<div class="stats-bar">
-  <a href="#sec-procurement" class="stat"><div class="stat-num">3</div><div class="stat-label">Procurement</div></a>
-  <a href="#sec-negotiation" class="stat"><div class="stat-num">3</div><div class="stat-label">Negotiation</div></a>
-  <a href="#sec-pilot" class="stat"><div class="stat-num">1</div><div class="stat-label">Pilot</div></a>
-  <a href="#sec-proposal" class="stat"><div class="stat-num">6</div><div class="stat-label">Proposal</div></a>
-  <a href="#sec-discovery" class="stat"><div class="stat-num">11</div><div class="stat-label">Discovery</div></a>
-  <a href="#sec-intro" class="stat"><div class="stat-num">3</div><div class="stat-label">Intro Meeting</div></a>
+<div class="tabs">
+<button class="tab active" data-tab="procurement" onclick="switchTab('procurement')" style="--tc:#2563eb">Procurement <span class="tab-count">3</span></button>
+<button class="tab " data-tab="negotiation" onclick="switchTab('negotiation')" style="--tc:#d97706">Negotiation <span class="tab-count">3</span></button>
+<button class="tab " data-tab="pilot" onclick="switchTab('pilot')" style="--tc:#0891b2">Pilot <span class="tab-count">1</span></button>
+<button class="tab " data-tab="proposal" onclick="switchTab('proposal')" style="--tc:#16a34a">Proposal <span class="tab-count">6</span></button>
+<button class="tab " data-tab="discovery" onclick="switchTab('discovery')" style="--tc:#64748b">Discovery <span class="tab-count">11</span></button>
+<button class="tab " data-tab="intro" onclick="switchTab('intro')" style="--tc:#94a3b8">Intro Meeting <span class="tab-count">3</span></button>
 </div>
 
 
-  <div id="sec-procurement" class="section-anchor section-label">Procurement — Más cercanos al cierre</div>
+<div id="panel-procurement" class="panel active">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #2563eb">
+      <div class="deal-card" style="border-left:5px solid #2563eb">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -127,7 +128,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #2563eb">
+      <div class="deal-card" style="border-left:5px solid #2563eb">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇪🇨</span>
@@ -159,7 +160,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #2563eb">
+      <div class="deal-card" style="border-left:5px solid #2563eb">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -196,10 +197,10 @@
           </div>
         </div>
       </div></div>
-
-  <div id="sec-negotiation" class="section-anchor section-label">Negotiation</div>
+</div>
+<div id="panel-negotiation" class="panel ">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #d97706">
+      <div class="deal-card" style="border-left:5px solid #d97706">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -241,7 +242,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #d97706">
+      <div class="deal-card" style="border-left:5px solid #d97706">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -283,7 +284,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #d97706">
+      <div class="deal-card" style="border-left:5px solid #d97706">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -325,10 +326,10 @@
           </div>
         </div>
       </div></div>
-
-  <div id="sec-pilot" class="section-anchor section-label">Pilot Definition</div>
+</div>
+<div id="panel-pilot" class="panel ">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #0891b2">
+      <div class="deal-card" style="border-left:5px solid #0891b2">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -360,10 +361,10 @@
           </div>
         </div>
       </div></div>
-
-  <div id="sec-proposal" class="section-anchor section-label">P&L & Proposal</div>
+</div>
+<div id="panel-proposal" class="panel ">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -400,7 +401,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -415,7 +416,7 @@
         <div class="deal-body">
           <div class="deal-contacts">
             <div class="col-label">Contactos</div>
-            <div class="contact-item"><div class="contact-name">Sin contactos en Hub</div></div>
+            <div class="contact-item"><div class="contact-name muted">Sin contactos en Hub</div></div>
             <div style="margin-top:10px;"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
           </div>
           <div class="deal-right">
@@ -427,7 +428,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇱</span>
@@ -459,7 +460,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -496,7 +497,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇵🇦</span>
@@ -538,7 +539,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #16a34a">
+      <div class="deal-card" style="border-left:5px solid #16a34a">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -575,10 +576,10 @@
           </div>
         </div>
       </div></div>
-
-  <div id="sec-discovery" class="section-anchor section-label">Discovery</div>
+</div>
+<div id="panel-discovery" class="panel ">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -620,7 +621,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -662,7 +663,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -704,7 +705,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🌎</span>
@@ -736,7 +737,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -778,7 +779,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -810,7 +811,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -852,7 +853,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇱</span>
@@ -884,7 +885,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🌎</span>
@@ -926,7 +927,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -941,7 +942,7 @@
         <div class="deal-body">
           <div class="deal-contacts">
             <div class="col-label">Contactos</div>
-            <div class="contact-item"><div class="contact-name">Sin contactos en Hub</div></div>
+            <div class="contact-item"><div class="contact-name muted">Sin contactos en Hub</div></div>
             <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
           </div>
           <div class="deal-right">
@@ -953,7 +954,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇱</span>
@@ -985,7 +986,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇱</span>
@@ -1017,7 +1018,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇱</span>
@@ -1049,7 +1050,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #94a3b8">
+      <div class="deal-card" style="border-left:5px solid #94a3b8">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -1091,10 +1092,10 @@
           </div>
         </div>
       </div></div>
-
-  <div id="sec-intro" class="section-anchor section-label">Intro Meeting</div>
+</div>
+<div id="panel-intro" class="panel ">
   <div class="deal-grid">
-      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+      <div class="deal-card" style="border-left:5px solid #cbd5e1">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇲🇽</span>
@@ -1103,7 +1104,7 @@
           </div>
           <div class="deal-head-right">
             <span class="ses-badge">2 sesiones</span>
-            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+            <span class="badge" style="background:#f8fafc;color:#64748b;">Intro Meeting</span>
           </div>
         </div>
         <div class="deal-body">
@@ -1126,7 +1127,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+      <div class="deal-card" style="border-left:5px solid #cbd5e1">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -1135,7 +1136,7 @@
           </div>
           <div class="deal-head-right">
             <span class="ses-badge">1 sesión</span>
-            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+            <span class="badge" style="background:#f8fafc;color:#64748b;">Intro Meeting</span>
           </div>
         </div>
         <div class="deal-body">
@@ -1158,7 +1159,7 @@
           </div>
         </div>
       </div>
-      <div class="deal-card" style="border-left: 5px solid #cbd5e1">
+      <div class="deal-card" style="border-left:5px solid #cbd5e1">
         <div class="deal-head">
           <div class="deal-head-left">
             <span class="deal-flag">🇨🇴</span>
@@ -1167,7 +1168,7 @@
           </div>
           <div class="deal-head-right">
             <span class="ses-badge">1 sesión</span>
-            <span class="badge" style="background:#f1f5f9;color:#64748b;">Intro Meeting</span>
+            <span class="badge" style="background:#f8fafc;color:#64748b;">Intro Meeting</span>
           </div>
         </div>
         <div class="deal-body">
@@ -1190,11 +1191,20 @@
           </div>
         </div>
       </div></div>
-
+</div>
 
 <div class="footer">
-  Preparado por Ricardo Astorga · Picker Express · 27 de Julio 2026 · Datos del Hub actualizados al 27 jul 2026. Este documento es confidencial y de uso interno.
+  Preparado por Ricardo Astorga · Picker Express · 27 de Julio 2026 · Confidencial — uso interno.
 </div>
+
+<script>
+function switchTab(stage) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab[data-tab="' + stage + '"]').classList.add('active');
+  document.getElementById('panel-' + stage).classList.add('active');
+}
+</script>
 
 </body>
 </html>

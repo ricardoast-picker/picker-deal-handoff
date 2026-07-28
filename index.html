@@ -59,6 +59,12 @@
     .prop-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; padding: 6px 12px; background: #0891b2; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; border-radius: 6px; text-decoration: none; transition: background 0.15s; }
     .prop-link:hover { background: #0e7490; }
     .prop-link-pending { display: inline-flex; align-items: center; margin-top: 8px; padding: 6px 12px; background: #f1f5f9; color: #94a3b8; font-size: 10px; font-weight: 700; border-radius: 6px; border: 1px solid #e2e8f0; }
+    .doc-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .doc-btns .prop-link,
+    .doc-btns .prop-link-pending { margin-top: 0; }
+    .contract-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; background: #f8fafc; color: #64748b; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; border-radius: 6px; border: 1.5px dashed #cbd5e1; text-decoration: none; cursor: default; }
+    .contract-btn.active { background: #0f172a; color: #fff; border: none; cursor: pointer; }
+    .contract-btn.active:hover { background: #1e293b; }
 
     .deal-right { padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
     .deal-summary { font-size: 12px; font-weight: 500; color: #475569; line-height: 1.65; }
@@ -118,7 +124,7 @@
             <div class="contact-role">Gerente de Logística y Operaciones</div>
             <div class="contact-email">monica.barragan@macstore.mx</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Cadena de retail Apple en México. 7k env/mes, modelo ondemand. Intro Meeting realizada esta semana. Pain: sin canal propio de delivery eficiente para entregas ondemand.</div>
@@ -148,7 +154,7 @@
             <div class="contact-name">Daniel Felipe Zuluaga</div>
             <div class="contact-role">Operaciones</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Oakberry Colombia. Canal de delivery propio desde cero (0 env/mes actuales). 1 sesión realizada. Pain: dependencia de plataformas, sin canal propio.</div>
@@ -179,7 +185,7 @@
             <div class="contact-role">Champion / Operaciones</div>
             <div class="contact-ch">WhatsApp</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">12+ locales en Bogotá, Cali y Medellín. 3k env/mes. Churn de ARMI. Intro Call exitosa 21-jul — pain validado, interesados en avanzar a Demo.</div>
@@ -214,7 +220,7 @@
             <div class="contact-name">Carlos Moreno</div>
             <div class="contact-role">Coordinador (bloqueado — vía Unidome)</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">845 droguerías, 140k env/mes, 597 riders propios. $2,090M COP/mes en nómina de riders. Carlos Moreno bloqueado por conflicto con Unidome. Se escaló directamente al COO José Espinosa el 23-jun.</div>
@@ -252,7 +258,7 @@
           <div class="contact-item">
             <div class="contact-name muted">Consultar con JD</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Cadena de supermercados México. 45k env/mes potencial. Deal en Discovery manejado por JD. Contexto completo y contactos a confirmar con JD.</div>
@@ -297,7 +303,7 @@
             <div class="contact-role">Coordinador de Plataformas Digitales</div>
             <div class="contact-email">plataformas@gruponikkori.com.mx</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">23+ sucursales de restaurantes japoneses en 12 ciudades MX. 400 env/mes propios + ~40k en plataformas. Pain: dependencia total de marketplaces. Intro Meeting 7-jul. Contrato enviado a revisión a Lupita.</div>
@@ -333,7 +339,7 @@
             <div class="contact-role">Supply Chain — Logistics BO</div>
             <div class="contact-email">sebastian.corredor@laika.com.co</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">E-commerce de mascotas Colombia. 80k pedidos/mes en canal express nuevo que buscan lanzar. 6 sesiones. Business case trabado internamente hace semanas. Canal CEO-CEO con Picker disponible pero sin usar aún.</div>
@@ -364,7 +370,7 @@
             <div class="contact-role">Operaciones</div>
             <div class="contact-email">camilo.palomo@cruzverde.cl</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Cruz Verde Chile + Maicao. 30k env/mes. 3 sesiones. Propuesta enviada por JD a Luis (Operaciones). Piden 1 semana para revisión interna antes de agendar sesión de respuesta.</div>
@@ -395,7 +401,7 @@
             <div class="contact-role">Jefe de Omnicanalidad · Champion</div>
             <div class="contact-email">katherine.alvarez@parauco.com</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Deal de alianza de canal (nuevo negocio). Parque Arauco Colombia quiere habilitar delivery en sus centros comerciales con Picker. Manejado por JD. Propuesta enviada.</div>
@@ -435,7 +441,7 @@
             <div class="contact-role">Líder Delivery Canales Propios · DM confirmada</div>
             <div class="contact-email">ctorres@alimentosalconsumidor.co</div>
           </div>
-          <div style="margin-top:10px;"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          <div class="doc-btns"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">El Corral Colombia (Grupo Nutresa) — mismo proceso que Papa John's con Patricia Torres. 24k env/mes. 5 sesiones. Sesión técnica realizada 27-jul. Propuesta enviada.</div>
@@ -471,7 +477,7 @@
             <div class="contact-role">Stakeholder Grupo Nutresa</div>
             <div class="contact-email">ypbobadilla@alimentosalconsumidor.com</div>
           </div>
-          <div style="margin-top:10px;"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          <div class="doc-btns"><a href="https://picker-nutresa.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Papa John's Colombia (Grupo Nutresa) — 101 locales PJ + El Corral. 10k env/mes PJ. 14 sesiones registradas. Deal más maduro del pipeline. Propuesta enviada, 2a sesión técnica realizada hoy 27-jul con Patricia Torres (DM).</div>
@@ -506,7 +512,7 @@
             <div class="contact-name">Santiago</div>
             <div class="contact-role">Operaciones · contacto operativo</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">18k env/mes Colombia. Piloto de 20 días aprobado internamente. 8 sesiones. Gonzalo Idarraga (GG) es el decisor. Santiago es el contacto operativo del día a día. Pain: SLA roto, saturación hora pico.</div>
@@ -547,7 +553,7 @@
             <div class="contact-role">Gerente de Operaciones Logísticas</div>
             <div class="contact-email">nicolas.chavarro@cruzverde.com.co</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Cruz Verde Colombia (distinto a Cruz Verde Chile). Deal en negociación manejado por JD. Múltiples stakeholders: Sandra Vargas (VP Negocios Digitales), Norma León (Gerente Logística), Nicolas Chavarro (Gerente Ops). Contexto detallado a confirmar con JD.</div>
@@ -588,7 +594,7 @@
             <div class="contact-role">Director Financiero</div>
             <div class="contact-email">forero.fabian@locatelcolombia.com</div>
           </div>
-          <div style="margin-top:10px;"><span class="prop-link-pending">Propuesta en Hub</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">11,500 env/mes Colombia. Deal en negociación manejado por JD. Sirley Alvarez como champion operativo, Calvachi como DM financiero y Fabián Forero como Director Financiero. También hay equipo técnico (Mauricio Forero, Johan Sotomayor). Contexto detallado con JD.</div>
@@ -638,7 +644,7 @@
             <div class="contact-role">Gerente Comercial/Marketplace · primer contacto</div>
             <div class="contact-email">j.torresm@coopidrogas.com.co</div>
           </div>
-          <div style="margin-top:10px;"><a href="https://picker-coopidrogas-propuesta.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          <div class="doc-btns"><a href="https://picker-coopidrogas-propuesta.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">Cooperativa con 10,159 droguerías afiliadas en Colombia. 6k env/mes base vía PharmaExpress. Fee $1,700 COP + seguro 2%. 8 sesiones. Sesión 27-jul: ajustes a propuesta presentados, Camilo comunica que van a avanzar. Documentos de alta de proveedor enviados. Proceso: Área (Camilo) → Gerencia Comercial → Comité de Asociados.</div>
@@ -678,7 +684,7 @@
             <div class="contact-name">Álvaro Rebolledo</div>
             <div class="contact-role">Director de Tecnología</div>
           </div>
-          <div style="margin-top:10px;"><a href="https://picker-salvators.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          <div class="doc-btns"><a href="https://picker-salvators.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">23 locales en Colombia. 11k env/mes. COP $77M/mes en flota propia. 10 sesiones. Propuesta presentada, negociación completada, contrato en revisión legal con Irene (legal interno de Salvator's). Guillermo es champion, William es CEO y decisor final.</div>
@@ -710,7 +716,7 @@
             <div class="contact-email">victorduenas1@gmail.com</div>
             <div class="contact-ch">WhatsApp · canal principal</div>
           </div>
-          <div style="margin-top:10px;"><a href="https://picker-encebollados.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a></div>
+          <div class="doc-btns"><a href="https://picker-encebollados.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary">5 locales en Guayaquil, Ecuador. 2k env/mes. Referido por Ricardo Mancero (Qik). Pain: dependencia de plataformas externas sin canal propio. Demo realizada, avanzan. Contrato enviado a revisión a Víctor Dueñas (dueño y único decisor).</div>

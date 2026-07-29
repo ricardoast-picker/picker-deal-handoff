@@ -91,8 +91,8 @@
     .footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; font-weight: 500; }
 
     /* DETAIL BUTTON */
-    .detail-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; background: #f8fafc; color: #0f172a; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; border-radius: 6px; border: 1.5px solid #cbd5e1; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.15s; }
-    .detail-btn:hover { background: #0891b2; color: #fff; border-color: #0891b2; }
+    .detail-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; background: #6366f1; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; border-radius: 6px; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.15s; }
+    .detail-btn:hover { background: #4f46e5; }
 
     /* DRAWER */
     .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 200; }
@@ -180,7 +180,7 @@
             <div class="contact-ch">+52 55 1353 6830</div>
             <div class="contact-email">monica.barragan@macstore.mx</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('macstore')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Cadena retail Apple en México · modelo on-demand</li><li>Ticket promedio actual $12k-$14k MXN · dispuestos a bajar a $4k-$5k para arrancar última milla on-demand</li><li>Mónica quiere 30 min — se le aclaró que depende de la distancia pero podemos estar en 60 min y lo entendió</li><li>Revisión interna: Armando propone involucrar a Pibox y MU por su filtro estricto de captación de drivers</li><li>Armando pide: locales por ciudad + volumen de envíos por ciudad</li></ul></div>
@@ -225,7 +225,7 @@
             <div class="contact-name">Víctor Cardona</div>
             <div class="contact-role">Picker · seguimiento proceso Starter</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta Starter por mail</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta Starter por mail</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('oakberry')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Oakberry Colombia · 4 locales · 15k env/mes en plataformas · quieren arrancar canal propio</li><li>Propuesta Starter enviada por mail · pasada a Víctor Cardona (Tipo 0)</li><li>Starter: $100,000 COP/local/mes (50% dto.) · $9,600 COP base 0-3km + $1,950/km adicional · COD 3.5%</li><li>Enterprise al llegar a 1,000 env canal propio: $8,300 tarifa + $1,400 orquestación · sin fee por local</li><li>Referencia: clientes Starter logran +87% volumen y -45% costos al crecer a Enterprise</li></ul></div>
@@ -265,7 +265,7 @@
             <div class="contact-role">Dueño · Decisor</div>
             <div class="contact-ch">+57 321 6252922</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('salchimonster')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>12+ locales · Bogotá, Cali y Medellín · 3k env/mes</li><li>Mala experiencia previa con canal propio (churn de ARMI) · pocas ganas de invertir de nuevo</li><li>Tendencia a quedarse con plataformas — está desconfiado</li><li>Se intentará convencer con demo mostrando diferenciación vs experiencia anterior</li></ul></div>
@@ -305,7 +305,7 @@
             <div class="contact-role">Director Comercial · Champion / posible DM</div>
             <div class="contact-ch">+57 318 4095 234 · WhatsApp</div>
           </div>
-          <div class="doc-btns"><a href="https://picker-unidrogas.vercel.app/" class="contract-btn active" target="_blank">Business Case ↗</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://picker-unidrogas.vercel.app/" class="contract-btn active" target="_blank">Business Case ↗</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('unidrogas')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>845 droguerías · 140k env/mes · 597 riders propios · $2,090M COP/mes nómina</li><li>App propia UNIDOME para asignación y orquestación de envíos</li><li>2 sesiones previas con Carlos Moreno (ya no labora) — hay que empezar desde cero con José</li><li>José regresa de tiempo fuera, estabilizando la operación · no hará cambios profundos por ahora</li><li>Responde por WhatsApp · demo aún no concretada</li></ul></div>
@@ -352,7 +352,7 @@
           <div class="contact-item">
             <div class="contact-name muted">Consultar con JD</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('casaley')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Cadena de supermercados México</li><li>45k env/mes potencial</li><li>Deal en Discovery — manejado por JD</li><li>Contexto y contactos: confirmar con JD</li></ul></div>
@@ -414,7 +414,7 @@
             <div class="contact-role">Olaclick · Partner</div>
             <div class="contact-ch">+52 55 2299 4011</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Sin propuesta formal</span><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_NIKKORI_MX.docx" class="contract-btn active" target="_blank" download>Contrato ↓</a></div>
+          <div class="doc-btns"><span class="prop-link-pending">Sin propuesta formal</span><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_NIKKORI_MX.docx" class="contract-btn active" target="_blank" download>Contrato ↓</a><button class="detail-btn" onclick="openDrawer('nikkori')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>23+ sucursales japonesas · 12 ciudades MX</li><li>400 env/mes canal propio · 15k env/mes en plataformas (potencial a 2 años)</li><li>Propuesta presentada verbalmente — sin documento formal (contrato Tipo 1)</li><li>Fee: $5 MXN de orquestación por envío</li><li>Contrato enviado · referido por Guillermo Guadarrama (Olaclick)</li></ul></div>
@@ -460,7 +460,7 @@
             <div class="contact-role">Supply Chain — Logistics BO</div>
             <div class="contact-email">sebastian.corredor@laika.com.co</div>
           </div>
-          <div class="doc-btns"><a href="https://app.alongspace.com/v/HNwubmgbNVDbMe8cpIs7/KVZVI6okPQE2qVzrOFeZ/overview" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://app.alongspace.com/v/HNwubmgbNVDbMe8cpIs7/KVZVI6okPQE2qVzrOFeZ/overview" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('laika')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>E-commerce mascotas Colombia · 6 locales Bogotá (Feria, 716, Usaquén, Ecoplaza, Unicentro, Chía)</li><li>Objetivo: activar canal express 60 min — hoy ventanas de 4-5 horas</li><li>Pago 100% web (sin COD) · ticket promedio $250K COP · distancia promedio 5km</li><li>También en Rappi — oportunidad de migrar volumen a canal propio</li><li>Fee $1,400 COP por envío</li></ul></div>
@@ -505,7 +505,7 @@
             <div class="contact-role">Operaciones</div>
             <div class="contact-email">camilo.palomo@cruzverde.cl</div>
           </div>
-          <div class="doc-btns"><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/PROPUESTA_CRUZVERDE_CL.pdf" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/PROPUESTA_CRUZVERDE_CL.pdf" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('cruzverde_cl')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Cruz Verde Chile (FEMSA) + Maicao · 30k env/mes reales · 120k potencial estimado · propuesta armó JD</li><li>Pain: tiempo de entrega actual 87 min + falta de trazabilidad en reparto</li><li>Piloto: primeros 1,000 pedidos sin costo · KPIs: tiempo entrega, tickets soporte, estado pedido</li><li>Pricing escalonado: 500 COP (0-20k) → 450 COP (20k-70k) → 400 COP (+70k)</li><li>Benchmark vs Farmatodo incluido en propuesta</li></ul></div>
@@ -545,7 +545,7 @@
             <div class="contact-role">Jefe de Omnicanalidad · Champion</div>
             <div class="contact-email">katherine.alvarez@parauco.com</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('parquearauco')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Alianza de canal — delivery en centros comerciales</li><li>Parque Arauco Colombia</li><li>Manejado por JD · Propuesta enviada</li></ul></div>
@@ -611,7 +611,7 @@
             <div class="contact-ch">+57 317 5051508</div>
             <div class="contact-email">ctorres@alimentosalconsumidor.co</div>
           </div>
-          <div class="doc-btns"><a href="https://picker-nutresa-v2.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://picker-nutresa-v2.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('elcorral')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Grupo Nutresa · 101 locales (50 PJ + 51 El Corral) · 34k env/mes totales</li><li>170 riders fijos · $717.5M COP/mes en nómina · ahorro proyectado $165.8M COP/mes (ROI 3.5x)</li><li>58% de pedidos en efectivo/datáfono · integración con SIESA/ALOHA (~1 semana)</li><li>Ya tienen ARMI · quieren ahorrar en su canal propio</li><li>Fee $1,400 COP + 3.5% recaudo · piloto propuesto: 2 locales, 2-3 semanas</li></ul></div>
@@ -668,7 +668,7 @@
             <div class="contact-ch">+57 317 5051508</div>
             <div class="contact-email">ctorres@alimentosalconsumidor.co</div>
           </div>
-          <div class="doc-btns"><a href="https://picker-nutresa-v2.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://picker-nutresa-v2.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('papajohns')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Grupo Nutresa · 101 locales (50 PJ + 51 El Corral) · 34k env/mes totales</li><li>170 riders fijos · $717.5M COP/mes en nómina · ahorro proyectado $165.8M COP/mes (ROI 3.5x)</li><li>58% de pedidos en efectivo/datáfono · integración con SIESA/ALOHA (~1 semana)</li><li>Ya tienen ARMI · quieren ahorrar en su canal propio</li><li>Fee $1,400 COP + 3.5% recaudo · piloto propuesto: 2 locales, 2-3 semanas</li></ul></div>
@@ -719,7 +719,7 @@
             <div class="contact-role">Gerente de Operaciones Logísticas</div>
             <div class="contact-email">nicolas.chavarro@cruzverde.com.co</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('cruzverde_co')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>Cruz Verde Colombia (≠ Cruz Verde Chile)</li><li>Deal en negociación — manejado por JD</li><li>Stakeholders: Sandra Vargas (VP Digital), Norma León (Logística), Nicolas Chavarro (Ops)</li><li>Contexto detallado: confirmar con JD</li></ul></div>
@@ -769,7 +769,7 @@
             <div class="contact-role">Director Financiero</div>
             <div class="contact-email">forero.fabian@locatelcolombia.com</div>
           </div>
-          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><span class="prop-link-pending">Propuesta en Hub</span><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('locatel')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>11,500 env/mes Colombia</li><li>Deal en negociación — manejado por JD</li><li>Champion: Sirley Alvarez · DM: Calvachi / Fabián Forero (Dir. Financiero)</li><li>Contexto detallado: confirmar con JD</li></ul></div>
@@ -823,7 +823,7 @@
             <div class="contact-role">Director Comercial · contacto operativo</div>
             <div class="contact-ch">+57 318 6156434</div>
           </div>
-          <div class="doc-btns"><a href="https://app.alongspace.com/v/HNwubmgbNVDbMe8cpIs7/aTMvEdVILcSrcqfzXDnL/overview" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span></div>
+          <div class="doc-btns"><a href="https://app.alongspace.com/v/HNwubmgbNVDbMe8cpIs7/aTMvEdVILcSrcqfzXDnL/overview" class="prop-link" target="_blank">Ver propuesta →</a><span class="contract-btn">Contrato</span><button class="detail-btn" onclick="openDrawer('dr9192')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>18k env/mes Colombia · Propuesta aprobada</li><li>Cobertura: operan en Pereira donde Picker tiene 60% de fulfillment — se acordó reemplazar solo el 50% de su flota propia</li><li>Fee $1,200 COP + 3.5% recaudo de efectivo</li><li>Gonzalo Idarraga (GG) = decisor · Santiago = Director Comercial</li><li>Documentación técnica ya compartida para sesión del viernes (integración con ERP)</li><li>Contrato aún no enviado</li></ul></div>
@@ -929,7 +929,7 @@
             <div class="contact-role">Director de Tecnología</div>
             <div class="contact-ch">+57 320 5634916</div>
           </div>
-          <div class="doc-btns"><a href="https://picker-salvators.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_SALVATORS_CO_V3.docx" class="contract-btn active" target="_blank" download>Contrato V3 ↓</a></div>
+          <div class="doc-btns"><a href="https://picker-salvators.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_SALVATORS_CO_V3.docx" class="contract-btn active" target="_blank" download>Contrato V3 ↓</a><button class="detail-btn" onclick="openDrawer('salvators')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>23 locales Colombia · 11k env/mes · $77M COP/mes en flota</li><li>Negociación completada · 3 revisiones de contrato, siguen con observaciones</li><li>Integración técnica realizada y certificada</li><li>Quieren integrar 1-2 proveedores propios de delivery</li><li>Guillermo = champion · William = CEO y decisor final</li></ul></div>
@@ -976,7 +976,7 @@
             <div class="contact-role">Qik · Referido</div>
             <div class="contact-ch">+593 99 567 9002</div>
           </div>
-          <div class="doc-btns"><a href="https://picker-encebollados.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_ENCEBOLLADOS_CDL_EC.docx" class="contract-btn active" target="_blank" download>Contrato ↓</a></div>
+          <div class="doc-btns"><a href="https://picker-encebollados.vercel.app/" class="prop-link" target="_blank">Ver propuesta →</a><a href="https://raw.githubusercontent.com/ricardoast-picker/picker-deal-handoff/main/contracts/CONTRATO_ENCEBOLLADOS_CDL_EC.docx" class="contract-btn active" target="_blank" download>Contrato ↓</a><button class="detail-btn" onclick="openDrawer('encebollados')">Ver detalle ↗</button></div>
         </div>
         <div class="deal-right">
           <div class="deal-summary"><ul><li>5 locales en Guayaquil, Ecuador · 2k env/mes</li><li>Referido por Ricardo Mancero (Qik)</li><li>Quiere crecer su canal propio de delivery</li><li>Propuesta presentada · Contrato enviado a Víctor Dueñas (dueño y único decisor)</li></ul></div>
@@ -1009,77 +1009,172 @@
 
 <script>
 const DEAL_DETAILS = {
-  coopidrogas: {
-    flag: '🇨🇴',
-    title: 'Coopidrogas',
-    stage: 'Procurement · 8 sesiones · Contrato enviado, pendiente firma',
+  macstore: {
+    flag: '🇲🇽', title: 'MacStore México', stage: 'Intro Meeting · 2 sesiones',
     sections: [
-      {
-        title: 'La empresa',
-        items: [
-          'Cooperativa Nacional de Droguistas Detallistas — fundada 1969, Bogotá',
-          '10,159 droguerías afiliadas · 755 municipios · 33 departamentos Colombia',
-          '33.7% market share canal farmacéutico colombiano — líder canal independiente',
-          'Ventas 2025: $4.6 billones COP (+14.6% vs 2024)',
-          'Las droguerías son propietarios independientes — Coopidrogas no puede ordenarles adoptar delivery'
-        ]
-      },
-      {
-        title: 'Operación validada',
-        items: [
-          '6,000 envíos/mes hoy: 4,990 PharmaExpress + ~1,000 droguerías sueltas',
-          'Potencial: si activan las 10K droguerías → +200K envíos/mes',
-          '30% flota propia (~1,800) / 70% terceros (~4,200) — MU, Quick, Pivox',
-          'Proceso 100% manual: cada droguería entra a cada carrier app por separado',
-          'Pago contraentrega (COD): 50% de órdenes (efectivo + datáfono)',
-          'Ticket promedio producto: $70,000 COP · Tarifa actual MU: $7,500 COP (3km)'
-        ]
-      },
-      {
-        title: 'Pain confirmado',
-        items: [
-          'SLA roto: prometen 1h, no cumplen según sus propias métricas',
-          'Cuello de botella hora pico 6–8pm con un solo proveedor (MU) — pierden pedidos',
-          'Gestión fragmentada: cada droguería gestiona cada carrier de forma independiente',
-          'Medicamentos refrigerados: no todos los carriers tienen capacidad',
-          'Sin visibilidad centralizada de entregas ni analytics de fulfillment'
-        ]
-      },
-      {
-        title: 'Pricing acordado',
-        items: [
-          'Fee orquestación: $1,700 COP/envío — incluye 3.5% recaudo de efectivo (era un stopper)',
-          'Seguro: 2% sobre valor del pedido',
-          'Escala: >30K envíos/mes → fee baja a $850 COP',
-          'Revenue estimado hoy: $19,500 USD/mes · Potencial: +$200K USD/mes'
-        ]
-      },
-      {
-        title: 'Proceso de decisión',
-        items: [
-          'Camilo Torres (DM real) → Gerencia Comercial ("Camilo director") → Comité de Asociados',
-          '27-jul: Camilo confirma que avanzan y envió docs de alta de proveedor',
-          'Contrato listo y enviado — pendiente firma del representante legal'
-        ]
-      },
-      {
-        title: 'Gaps / riesgos',
-        warn: true,
-        items: [
-          'Brecha datáfono: 50% de órdenes son COD — Picker no ofrece datáfono con carriers terceros · workaround: credenciales MU de cada droguería',
-          'Droguerías sin cultura digital necesitan notificación activa (WhatsApp/llamada) cuando llega un pedido — Picker no tiene esto hoy · pendiente solución antes del Comité',
-          'Comité de Asociados: fecha no confirmada · mapear cuándo se reúne y quién lo integra'
-        ]
-      },
-      {
-        title: 'Grabaciones Fathom',
-        fathom: [
-          { name: 'Intro Meeting', date: '25-jun-2026', url: 'https://fathom.video/calls/722636897' },
-          { name: 'Discovery (Demo Sesión 2)', date: '1-jul-2026', url: 'https://fathom.video/calls/729877113' },
-          { name: 'Propuesta Pt.1', date: '16-jul-2026', url: 'https://fathom.video/calls/748303574' },
-          { name: 'Negociación · cierre de estructura', date: '27-jul-2026', url: 'https://fathom.video/calls/760473740' }
-        ]
-      }
+      { title: 'La empresa', items: ['Cadena retail Apple en México · 98 tiendas · modelo on-demand desde tienda','Reseller autorizado Apple — alto AOV y productos de alto valor (seguro crítico)'] },
+      { title: 'Operación validada', items: ['Ticket promedio actual: $12k–$14k MXN · dispuestos a bajar a $4k–$5k para arrancar última milla','Mónica quiere entrega en 30 min · aclarado que depende de distancia pero podemos estar en 60 min · lo entendió','Armando (interno Picker) propone involucrar Pibox y MU por filtro estricto de captación de drivers'] },
+      { title: 'Pain confirmado', items: ['Sin canal de última milla on-demand hoy — dependen de tienda fisica','Quieren atender pedidos urgentes sin tener flota propia'] },
+      { title: 'Pendientes para avanzar', items: ['Armando pide: listado de locales por ciudad + volumen de envíos por ciudad','Una vez Armando analice la data → nueva sesión explicando qué puede ofrecer Picker'] },
+      { title: 'Grabaciones Fathom', fathom: [{ name: 'Picker – Mónica / MacStore', date: '23-jul-2026', url: 'https://fathom.video/calls/758616416' }] }
+    ]
+  },
+  oakberry: {
+    flag: '🇨🇴', title: 'Oakberry Colombia', stage: 'Intro Meeting · 1 sesión',
+    sections: [
+      { title: 'La empresa', items: ['Oakberry Colombia · 4 locales Bogotá · 15,000 env/mes en plataformas (Rappi/Uber Eats)','Quieren lanzar canal DTC para capturar leads de Meta a $0.50–$1 que no llegan a tienda'] },
+      { title: 'Operación y reto principal', items: ['Ticket promedio ~$6 USD — muy bajo, costo de entrega es crítico','Comisión Rappi ~22% no es viable para ese ticket · canal propio debe ser competitivo','Propuesta Starter enviada por mail · pasada a Víctor Cardona (proceso Tipo 0)'] },
+      { title: 'Propuesta Starter', items: ['$100,000 COP/local/mes (50% descuento) · tarifa carrier $9,600 base 0-3km + $1,950/km adicional · COD 3.5%','Al llegar a 1,000 env/mes canal propio → upgrade a Enterprise: $8,300 carrier + $1,400 orquestación sin fee por local','Referencia: clientes Starter logran +87% volumen y –45% costos al migrar a Enterprise'] },
+      { title: 'Grabaciones Fathom', fathom: [{ name: 'Picker – Oakberry (Intro & Discovery)', date: '23-jul-2026', url: 'https://fathom.video/calls/757395880' }] }
+    ]
+  },
+  salchimonster: {
+    flag: '🇨🇴', title: 'Salchimonster', stage: 'Intro Meeting · 1 sesión',
+    sections: [
+      { title: 'La empresa', items: ['12+ locales Colombia (Bogotá, Cali, Medellín) · 898K seguidores IG · ~3k env/mes','Dueño: Bryan (decisor directo)'] },
+      { title: 'Pain y contexto', items: ['Mala experiencia previa con canal propio (tenían ARMI, se fueron) · pocas ganas de invertir de nuevo','Tendencia a quedarse en plataformas — está desconfiado del modelo de canal propio','En el Intro Call se notó escepticismo activo — no está en modo de compra'] },
+      { title: 'Estrategia recomendada', warn: true, items: ['Demo es el único camino — hay que mostrarle, no contarle','Diferenciación clave vs ARMI: orquestación multi-carrier, analytics, sin riesgo de flota fija','No presionar cierre — construir confianza primero'] }
+    ]
+  },
+  unidrogas: {
+    flag: '🇨🇴', title: 'Unidrogas', stage: 'Intro Meeting · Demo agendada 4-ago',
+    sections: [
+      { title: 'La empresa', items: ['Unidrogas + Dropopular · 845 droguerías Colombia · HQ Barranquilla','Marcas: Unidrogas (~98k env/mes) + Dropopular (~42k env/mes) = 140k totales','Riders propios: 597 empleados de planta · $2,090M COP/mes en nómina'] },
+      { title: 'Operación validada (sesión con Carlos Moreno, may-2026)', items: ['App propia UNIDOME para asignación y orquestación de envíos (desarrollo interno)','70–80% de pedidos requieren transferencias: rider recoge en tienda A, va a B/C para completar inventario — detour de 10-15km','COD: 70% efectivo contraentrega (adultos mayores, temor a fraude digital)','Canales: call center, e-commerce, app propia, WhatsApp bot (Alina IA)','Radio de cobertura: 4km por tienda · SLA valle 35-45min · pico 60min en Bogotá'] },
+      { title: 'Contexto actual', items: ['Carlos Moreno (contacto original) ya no labora en Unidrogas','José Espinosa (Dir. Comercial) es nuevo champion/posible DM · regresa de tiempo fuera','José está estabilizando la operación · no hará cambios profundos por ahora · responde por WhatsApp','Demo agendada 4-ago · invitados Antonio y JD — presentar Picker desde cero'] },
+      { title: 'Business Case estimado', items: ['Reducir flota 597→300 riders en escenario 50% híbrido','Ahorro neto estimado: ~$1,000M COP/mes'] },
+      { title: 'Grabaciones Fathom', fathom: [{ name: 'Picker – Unidrogas & Dropopular (Intro Meeting)', date: '22-may-2026', url: 'https://fathom.video/calls/682622302' }] }
+    ]
+  },
+  casaley: {
+    flag: '🇲🇽', title: 'Casa Ley', stage: 'Discovery · Deal de JD',
+    sections: [
+      { title: 'Contexto', items: ['Cadena de supermercados México · 45k env/mes potencial','Deal manejado por JD — contacto y contexto detallado: consultar con JD antes de retomar'] },
+      { title: 'Lo que se sabe', items: ['Etapa: Discovery','Revenue estimado: $120,000 USD/mes'] }
+    ]
+  },
+  nikkori: {
+    flag: '🇲🇽', title: 'Grupo Nikkori', stage: 'Proposal · Contrato enviado',
+    sections: [
+      { title: 'La empresa', items: ['23+ restaurantes japoneses en 12 ciudades México (CDMX, MTY, GDL y más)','Referido por Guillermo Guadarrama (Olaclick) — llegó como alianza de partner'] },
+      { title: 'Operación', items: ['400 env/mes canal propio hoy','15,000 env/mes en plataformas que quieren mover a canal propio en 2 años','Pain principal: dependencia de plataformas y comisiones altas'] },
+      { title: 'Propuesta y contrato', items: ['Propuesta Tipo 1 — sin documento formal, presentada verbalmente','Fee: $5 MXN de orquestación por envío','Contrato enviado a Lupita (Coordinadora de Logística)','Siguiente paso: recibir comentarios de contrato y avanzar a firma'] }
+    ]
+  },
+  laika: {
+    flag: '🇨🇴', title: 'Laika', stage: 'Proposal · En seguimiento',
+    sections: [
+      { title: 'La empresa', items: ['E-commerce mascotas Colombia · líder del mercado','6 locales Bogotá (Feria, 716, Usaquén, Ecoplaza, Unicentro, Chía)','80,000+ pedidos/mes totales · quieren activar canal express 60min'] },
+      { title: 'Operación canal express a activar', items: ['1,000 env/mes (canal nuevo, no existente hoy)','Ventanas actuales: 4–5 horas · objetivo: 60 minutos','Pago 100% web — sin COD · ticket promedio $250,000 COP · distancia promedio 5km','También en Rappi — oportunidad de migrar volumen a canal propio'] },
+      { title: 'Propuesta', items: ['Fee $1,400 COP por envío de orquestación · sin mensualidad (waived para relación a largo plazo)','Sin cláusula de permanencia · activación rápida (~3 días manual)'] },
+      { title: 'Proceso de decisión', items: ['Leonardo Jiménez (CCO) = Champion · debe presentar BC internamente antes de dar VoBo','Deal trabado 5+ semanas en aprobación interna · no presionar'] },
+      { title: 'Grabaciones Fathom', fathom: [
+        { name: 'Picker – Laika (Intro & Discovery)', date: '8-may-2026', url: 'https://fathom.video/calls/649183495' },
+        { name: 'Laika – Propuesta', date: '12-may-2026', url: 'https://fathom.video/calls/669031683' }
+      ]}
+    ]
+  },
+  cruzverde_cl: {
+    flag: '🇨🇱', title: 'Cruz Verde Chile', stage: 'Proposal · Esperando respuesta de Luis Jiménez',
+    sections: [
+      { title: 'La empresa', items: ['Cruz Verde Chile (FEMSA) + Maicao · cadena farmacéutica líder Chile','30,000 env/mes reales · 120,000 potencial estimado','Propuesta armada por JD'] },
+      { title: 'Pain confirmado', items: ['Tiempo de entrega actual: 87 minutos promedio','Falta de trazabilidad en el reparto','Sin visibilidad centralizada del estado de pedidos'] },
+      { title: 'Propuesta y pricing', items: ['Pricing escalonado CLP: 500 (0-20k env) → 450 (20k-70k) → 400 (+70k)','Piloto: primeros 1,000 pedidos sin costo · KPIs: tiempo entrega, tickets soporte, estado pedido','Benchmark vs Farmatodo incluido en propuesta'] },
+      { title: 'Gap crítico', warn: true, items: ['Precio propuesto CLP 210/envío vs costo actual de Cruz Verde ~CLP 60/envío — brecha grande','Picker ofreció descuento escalonado 50% Y1, 30% Y2 para acercar posiciones','DM Luis Jiménez debe confirmar fecha para sesión de respuesta a propuesta'] },
+      { title: 'Grabaciones Fathom', fathom: [{ name: 'Picker – Cruz Verde CL (Propuesta)', date: '14-jul-2026', url: 'https://fathom.video/calls/744886281' }] }
+    ]
+  },
+  parquearauco: {
+    flag: '🇨🇴', title: 'Parque Arauco Colombia', stage: 'Proposal · Deal de JD',
+    sections: [
+      { title: 'Contexto', items: ['Alianza de canal — delivery en centros comerciales Parque Arauco Colombia','Deal manejado por JD — propuesta enviada, contexto detallado: consultar con JD'] },
+      { title: 'Contacto', items: ['Katherine Alvarez · Jefe de Omnicanalidad · Champion','katherine.alvarez@parauco.com'] }
+    ]
+  },
+  elcorral: {
+    flag: '🇨🇴', title: 'El Corral (Grupo Nutresa)', stage: 'Negotiation · 5 sesiones',
+    sections: [
+      { title: 'La empresa', items: ['Alimentos al Consumidor SAS (Grupo Nutresa) · 51 locales El Corral Colombia','Deal conjunto con Papa John\'s (50 locales) = 101 locales · 34k env/mes totales'] },
+      { title: 'Operación validada', items: ['24k env/mes (El Corral) · 170 riders fijos total con PJ · $717.5M COP/mes en nómina','Ahorro proyectado con Picker: $165.8M COP/mes (ROI 3.5x)','58% de pedidos en efectivo/datáfono · integración con SIESA/ALOHA ~1 semana','Ya tienen ARMI · objetivo: ahorrar en su canal propio (no reemplazar ARMI)'] },
+      { title: 'Pricing acordado', items: ['Fee: $1,400 COP + 3.5% recaudo de efectivo','Piloto propuesto: 2 locales, 2-3 semanas'] },
+      { title: 'Proceso de decisión', items: ['Leidy Paola Jiménez (Dir. Tecnología) = DM · lpjimenez@alimentosalconsumidor.com','Luis Salazar reporta a Leidy · Marcela Pérez (Mkt) lidera a Patricia Torres','Patricia Torres = Líder Delivery, contacto operativo (champion)'] }
+    ]
+  },
+  papajohns: {
+    flag: '🇨🇴', title: "Papa John's CO (Grupo Nutresa)", stage: 'Negotiation · 14 sesiones',
+    sections: [
+      { title: 'La empresa', items: ['Alimentos al Consumidor SAS (Grupo Nutresa) · 50 locales Papa John\'s Colombia','Deal conjunto con El Corral (51 locales) = 101 locales · 34k env/mes totales'] },
+      { title: 'Operación validada', items: ['10k env/mes (Papa John\'s) · 170 riders fijos total con El Corral · $717.5M COP/mes en nómina','Ahorro proyectado con Picker: $165.8M COP/mes (ROI 3.5x)','58% de pedidos en efectivo/datáfono · integración con SIESA/ALOHA ~1 semana','Ya tienen ARMI · objetivo: ahorrar en canal propio'] },
+      { title: 'Pricing acordado', items: ['Fee: $1,400 COP + 3.5% recaudo de efectivo','Piloto propuesto: 2 locales, 2-3 semanas'] },
+      { title: 'Proceso de decisión', items: ['Leidy Paola Jiménez (Dir. Tecnología) = DM · lpjimenez@alimentosalconsumidor.com','Luis Salazar reporta a Leidy · Marcela Pérez (Mkt) lidera a Patricia Torres','Patricia Torres = Líder Delivery, contacto operativo (champion)','Próximo paso: sesión financiera con Leidy Paola para avanzar a cierre'] }
+    ]
+  },
+  cruzverde_co: {
+    flag: '🇨🇴', title: 'Cruz Verde Colombia', stage: 'Negotiation · Deal de JD',
+    sections: [
+      { title: 'Contexto', items: ['Cruz Verde Colombia (≠ Cruz Verde Chile) · 200k env/mes · deal más grande del pipeline','Deal manejado por JD — contexto detallado: consultar con JD antes de retomar'] },
+      { title: 'Contactos clave', items: ['Sandra Vargas · VP Negocios Digitales · sandrap.vargas@cruzverde.com.co','Norma León · Gerente de Logística · norma.leon@cruzverde.com.co','Nicolas Chavarro · Gerente de Operaciones Logísticas · nicolas.chavarro@cruzverde.com.co'] }
+    ]
+  },
+  locatel: {
+    flag: '🇨🇴', title: 'Locatel Colombia', stage: 'Negotiation · Deal de JD',
+    sections: [
+      { title: 'Contexto', items: ['11,500 env/mes Colombia · deal en negociación avanzada','Deal manejado por JD — contexto detallado: consultar con JD antes de retomar'] },
+      { title: 'Contactos clave', items: ['Sirley Alvarez · Gerente de Proyecto · Champion · alvarez.sirley@locatelcolombia.com','José Ignacio Calvachi · Gerente de Operaciones · DM financiero · calvachi.jose@locatelcolombia.com','Fabián Forero · Director Financiero · forero.fabian@locatelcolombia.com'] }
+    ]
+  },
+  dr9192: {
+    flag: '🇨🇴', title: 'Droguerías 9192', stage: 'Pilot Definition · Sesión técnica viernes 1-ago',
+    sections: [
+      { title: 'La empresa', items: ['Droguerías 9192 · Pereira, Colombia · cadena regional','18,000 env/mes · 70 domiciliarios propios (costo fijo alto)'] },
+      { title: 'Operación y pain', items: ['Pain principal: costos fijos de nómina crecientes + procesos manuales sin escalabilidad en picos','Operan en Pereira — Picker tiene 60% de fulfillment ahí · se acordó reemplazar solo el 50% de su flota','Propuesta aprobada en principio · canales de cobro: efectivo, datáfono, online (COD y datáfono → flota propia para evitar 3.5%)'] },
+      { title: 'Pricing acordado', items: ['Fee orquestación: $1,200 COP + IVA · COD fee: 3.5%','Proyección: reducir 70→35 riders · ahorro neto $29.4M COP/mes','Mensualidad waived'] },
+      { title: 'Proceso de decisión', items: ['Gonzalo Idarraga (GG) = Decisor máximo · gerencia@droguerias9192.com · +57 315 5855246','Santiago = Dir. Comercial · contacto operativo · +57 318 6156434','No hay comité más arriba — si Gonzalo aprueba, se firma'] },
+      { title: 'Sesión técnica 1-ago', warn: true, items: ['Quieren ver cómo conectar Picker con su ERP Manager','Preocupación principal: seguridad de datos / acceso que requiere Picker al ERP','Documentación de integración enviada previamente','Contrato aún NO enviado — esperar validación técnica primero'] },
+      { title: 'Grabaciones Fathom', fathom: [{ name: 'Picker – Santiago / Droguerías 9192 (Alineación)', date: '28-jul-2026', url: 'https://fathom.video/calls/762761017' }] }
+    ]
+  },
+  coopidrogas: {
+    flag: '🇨🇴', title: 'Coopidrogas', stage: 'Procurement · 8 sesiones · Contrato enviado, pendiente firma',
+    sections: [
+      { title: 'La empresa', items: ['Cooperativa Nacional de Droguistas Detallistas — fundada 1969, Bogotá','10,159 droguerías afiliadas · 755 municipios · 33 departamentos Colombia','33.7% market share canal farmacéutico colombiano — líder canal independiente','Ventas 2025: $4.6 billones COP (+14.6% vs 2024)','Las droguerías son propietarios independientes — Coopidrogas no puede ordenarles adoptar delivery'] },
+      { title: 'Operación validada', items: ['6,000 envíos/mes hoy: 4,990 PharmaExpress + ~1,000 droguerías sueltas','Potencial: si activan las 10K droguerías → +200K envíos/mes','30% flota propia (~1,800) / 70% terceros (~4,200) — MU, Quick, Pivox','Proceso 100% manual: cada droguería entra a cada carrier app por separado','Pago contraentrega (COD): 50% de órdenes · ticket promedio $70,000 COP · tarifa actual MU: $7,500 COP (3km)'] },
+      { title: 'Pain confirmado', items: ['SLA roto: prometen 1h, no cumplen según sus propias métricas','Cuello de botella hora pico 6–8pm con un solo proveedor (MU) — pierden pedidos','Gestión fragmentada: cada droguería gestiona cada carrier de forma independiente','Sin visibilidad centralizada de entregas ni analytics de fulfillment'] },
+      { title: 'Pricing acordado', items: ['Fee orquestación: $1,700 COP/envío — incluye 3.5% recaudo de efectivo (era un stopper)','Seguro: 2% sobre valor del pedido','Escala: >30K envíos/mes → fee baja a $850 COP','Revenue estimado hoy: $19,500 USD/mes · Potencial: +$200K USD/mes'] },
+      { title: 'Proceso de decisión', items: ['Camilo Torres (DM real) → Gerencia Comercial ("Camilo director") → Comité de Asociados','27-jul: Camilo confirma que avanzan y envió docs de alta de proveedor','Contrato listo y enviado — pendiente firma del representante legal'] },
+      { title: 'Gaps / riesgos', warn: true, items: ['Brecha datáfono: 50% de órdenes son COD — Picker no ofrece datáfono con carriers terceros · workaround: credenciales MU de cada droguería','Droguerías sin cultura digital necesitan notificación activa (WhatsApp/llamada) cuando llega un pedido — Picker no tiene esto hoy · pendiente solución antes del Comité','Comité de Asociados: fecha no confirmada · mapear cuándo se reúne y quién lo integra'] },
+      { title: 'Grabaciones Fathom', fathom: [
+        { name: 'Intro Meeting', date: '25-jun-2026', url: 'https://fathom.video/calls/722636897' },
+        { name: 'Discovery (Demo Sesión 2)', date: '1-jul-2026', url: 'https://fathom.video/calls/729877113' },
+        { name: 'Propuesta Pt.1', date: '16-jul-2026', url: 'https://fathom.video/calls/748303574' },
+        { name: 'Negociación · cierre de estructura', date: '27-jul-2026', url: 'https://fathom.video/calls/760473740' }
+      ]}
+    ]
+  },
+  salvators: {
+    flag: '🇨🇴', title: "Salvator's Pizza & Pasta", stage: 'Procurement · 10 sesiones · Contrato V3 en revisión legal',
+    sections: [
+      { title: 'La empresa', items: ['23 locales Colombia · pizza & pasta · 11,000 env/mes','$77M COP/mes en flota propia (costo que quieren reducir)'] },
+      { title: 'Estado del deal', items: ['Negociación completada comercialmente · 3 revisiones de contrato con observaciones legales','Integración técnica realizada y certificada (cook time logic + tests de creación/cancelación)','Quieren integrar 1-2 proveedores propios de delivery (además de los de Picker)','V3 del contrato es la versión actual — pendiente VoBo final de Irene (legal)'] },
+      { title: 'Objeciones legales pendientes', warn: true, items: ['Prefactura: Salvator\'s quiere revisar prefactura antes de que se emita · Picker no acepta objeciones post-emisión','Nota crédito: ley colombiana exige nota crédito para rechazar factura · Picker emite descuentos en factura siguiente · en investigación','Responsabilidad logística: Picker se posiciona como plataforma tech, no proveedor logístico — no negociable'] },
+      { title: 'Proceso de decisión', items: ['William Dau (CEO) = Decisor final · William.dau@cucinare.co · +57 314 5812915','Guillermo Peña = Champion interno · +57 321 4461885','Álvaro Rebolledo = Dir. Tecnología · +57 320 5634916'] },
+      { title: 'Grabaciones Fathom', fathom: [
+        { name: "Certificación Picker + Salvator's", date: '10-jul-2026', url: 'https://fathom.video/calls/743046871' },
+        { name: "Contrato Salvator's (revisión interna)", date: '10-jul-2026', url: 'https://fathom.video/calls/741984895' },
+        { name: "Revisión contrato Salvator's", date: '15-jul-2026', url: 'https://fathom.video/calls/748576913' }
+      ]}
+    ]
+  },
+  encebollados: {
+    flag: '🇪🇨', title: 'Encebollados CDL', stage: 'Procurement · 2 sesiones · Contrato enviado',
+    sections: [
+      { title: 'La empresa', items: ['5 locales en Guayaquil, Ecuador (4 norte + 1 Vía Salitre)','~2,000 env/mes · WhatsApp como canal principal · 50% COD · AOV ~$10','Referido por Ricardo Mancero (Qik) · modelo conjunto Qik + Picker'] },
+      { title: 'Pain y contexto', items: ['2 agentes manuales por WhatsApp + empresa externa de motorizados (sin flota propia)','Mala experiencia 2021 con Spoonity/Picker anterior: modelo multi-vendor complejo con fees ocultos · generó desconfianza','Víctor Dueñas (dueño) es escéptico de promesas de proveedores — prioriza soluciones probadas'] },
+      { title: 'Propuesta y diferenciación', items: ['Modelo Qik + Picker = un solo proveedor, sin complicaciones','Fee: $0.30/entrega orquestación + ~$2.35 carrier (Uber/Rappi promedio) + 3.5% COD','ROI: ahorro ~$1.3k/mes al reemplazar 2 agentes manuales (supuesto crítico — validar con Víctor)','Contrato enviado a Víctor Dueñas · pendiente firma y fecha de arranque'] },
+      { title: 'Grabaciones Fathom', fathom: [
+        { name: 'Qik – Encebollados CDL (Sesión 1)', date: '6-jul-2026', url: 'https://fathom.video/calls/736385731' },
+        { name: 'Qik – Encebollados CDL (Sesión 2)', date: '6-jul-2026', url: 'https://fathom.video/calls/736385436' }
+      ]}
     ]
   }
 };

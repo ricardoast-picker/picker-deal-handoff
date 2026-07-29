@@ -1187,7 +1187,20 @@ const DEAL_DETAILS = {
     sections: [
       { title: 'La empresa', items: ['23 locales Colombia · pizza & pasta · 11,000 env/mes','$77M COP/mes en flota propia (costo que quieren reducir)'] },
       { title: 'Estado del deal', items: ['Negociación completada comercialmente · 3 revisiones de contrato con observaciones legales','Integración técnica realizada y certificada (cook time logic + tests de creación/cancelación)','Quieren integrar 1-2 proveedores propios de delivery (además de los de Picker)','V3 del contrato es la versión actual — pendiente VoBo final de Irene (legal)'] },
-      { title: 'Objeciones legales pendientes', warn: true, items: ['Prefactura: Salvator\'s quiere revisar prefactura antes de que se emita · Picker no acepta objeciones post-emisión','Nota crédito: ley colombiana exige nota crédito para rechazar factura · Picker emite descuentos en factura siguiente · en investigación','Responsabilidad logística: Picker se posiciona como plataforma tech, no proveedor logístico — no negociable'] },
+      { title: '🟡 Requiere aclaración / ajuste', warn: true, items: [
+        'Modificación de tarifas: el contrato permite a Picker modificar unilateralmente con 30 días de aviso. Salvator\'s debe poder terminar sin penalidad si no acepta las nuevas condiciones.',
+        'Cargos y recargos adicionales: por correo se confirmó que no aplicarían recargos no acordados, pero los Términos permiten facturar penalidades y cargos administrativos. Debe cerrarse esta posibilidad.',
+        'Objeción de facturas: por correo se confirmó derecho a objetar errores, duplicados o tarifas incorrectas; pero contrato y Términos establecen que el pago no está sujeto a aprobación del cliente. Debe aclararse el procedimiento y el tratamiento de valores objetados.',
+        'Penalidades: el contrato contempla cancelaciones, retornos y tiempos de espera que pueden originarse por el repartidor o cliente, no por Salvator\'s. Solo deben asumirse cargos realmente imputables a su operación.',
+        'Reembolsos: solo se reconocen como descuentos en facturas futuras. Falta definir qué sucede con un saldo a favor si el contrato termina y ya no existen facturas posteriores.',
+        'SLA / niveles de servicio: los Términos no establecen claramente tiempos mínimos de asignación, llegada, entrega, respuesta de soporte ni solución de novedades.',
+        'Cambios futuros de los Términos: Picker puede modificarlos unilateralmente y el uso posterior implica aceptación. Las condiciones particulares acordadas con Salvator\'s deben quedar protegidas frente a modificaciones futuras.'
+      ] },
+      { title: '🔴 Debe corregirse antes de firma', warn: true, items: [
+        'Jurisdicción y solución de controversias: lo conversado por correo debe quedar expresamente en el documento contractual. Los Términos Generales prevalecen en materia de resolución de controversias, por lo que cualquier condición distinta debe incorporarse al contrato o anexo.',
+        'Responsabilidad frente a operadores y repartidores: por correo se explicó que Salvator\'s no tendría responsabilidad directa frente a terceros; sin embargo, los Términos establecen que la relación contractual existe exclusivamente entre el Usuario y el proveedor logístico. Contradicción que debe eliminarse.',
+        'Prevalencia de los acuerdos alcanzados: los correos contienen aclaraciones relevantes que no están reflejadas literalmente en el contrato. Como los Términos prevalecen en varias materias, todos los acuerdos deben quedar en el contrato o en un anexo firmado con prevalencia expresa.'
+      ] },
       { title: 'Proceso de decisión', items: ['William Dau (CEO) = Decisor final · William.dau@cucinare.co · +57 314 5812915','Guillermo Peña = Champion interno · +57 321 4461885','Álvaro Rebolledo = Dir. Tecnología · +57 320 5634916'] },
       { title: 'Grabaciones Fathom', fathom: [
         { name: "Certificación Picker + Salvator's", date: '10-jul-2026', url: 'https://fathom.video/calls/743046871' },

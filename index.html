@@ -1173,6 +1173,32 @@ const DEAL_DETAILS = {
       { title: 'Pain confirmado', items: ['SLA roto: prometen 1h, no cumplen según sus propias métricas','Cuello de botella hora pico 6–8pm con un solo proveedor (MU) — pierden pedidos','Gestión fragmentada: cada droguería gestiona cada carrier de forma independiente','Sin visibilidad centralizada de entregas ni analytics de fulfillment'] },
       { title: 'Pricing acordado', items: ['Fee orquestación: $1,700 COP/envío — incluye 3.5% recaudo de efectivo (era un stopper)','Seguro: 2% sobre valor del pedido','Escala: >30K envíos/mes → fee baja a $850 COP','Revenue estimado hoy: $19,500 USD/mes · Potencial: +$200K USD/mes'] },
       { title: 'Proceso de decisión', items: ['Camilo Torres (DM real) → Gerencia Comercial ("Camilo director") → Comité de Asociados','27-jul: Camilo confirma que avanzan y envió docs de alta de proveedor','Contrato listo y enviado — pendiente firma del representante legal'] },
+      { title: 'Alta de proveedor — Persona Jurídica (10 docs)', items: [
+        '1. Formato de codificación de proveedores nuevos v17 — diligenciado y firmado por el proveedor · numeral 12: datos del funcionario solicitante y visto bueno del jefe inmediato',
+        '2. RUT actualizado con fecha de generación año 2026',
+        '3. Cámara de comercio no mayor a 30 días',
+        '4. Copia de la cédula del representante legal',
+        '5. Consulta en listas restrictivas del proveedor, representante legal y todas las personas relacionadas en cámara de comercio y RUT',
+        '6. Cotización, propuesta comercial o contrato',
+        '7. Declaración de renta o estados financieros',
+        '8. Certificación bancaria para pagos por transferencia',
+        '9. Certificación tamaño de empresa actualizada año 2026 (Ley de plazos justos) — certificando ingresos del año 2025',
+        '10. Certificado de composición accionaria'
+      ] },
+      { title: 'Alta de proveedor — Persona Natural (8 docs)', items: [
+        '1. Formato de codificación de proveedores nuevos v17 — diligenciado y firmado por el proveedor · numeral 12: datos del funcionario solicitante y visto bueno del jefe inmediato',
+        '2. RUT actualizado con fecha de generación año 2026',
+        '3. Copia de la cédula del representante legal',
+        '4. Consulta en listas restrictivas del proveedor',
+        '5. Cotización, propuesta comercial o contrato',
+        '6. Declaración de renta o certificado de ingresos',
+        '7. Certificación bancaria para pagos por transferencia',
+        '8. Certificación tamaño de empresa actualizada año 2025 (Ley de plazos justos) — certificando ingresos del año 2025'
+      ] },
+      { title: '⚠️ Nota listas restrictivas + docs pendientes', warn: true, items: [
+        'Si hay coincidencias en listas restrictivas: se debe anexar autorización del área de Control y Riesgo para continuar el proceso',
+        'Pendiente localizar y cargar 2 documentos: Alianza Comercial Farmaexpress – Picker (vienen del mismo proceso de alta)'
+      ] },
       { title: 'Gaps / riesgos', warn: true, items: ['Brecha datáfono: 50% de órdenes son COD — Picker no ofrece datáfono con carriers terceros · workaround: credenciales MU de cada droguería','Droguerías sin cultura digital necesitan notificación activa (WhatsApp/llamada) cuando llega un pedido — Picker no tiene esto hoy · pendiente solución antes del Comité','Comité de Asociados: fecha no confirmada · mapear cuándo se reúne y quién lo integra'] },
       { title: 'Grabaciones Fathom', fathom: [
         { name: 'Intro Meeting', date: '25-jun-2026', url: 'https://fathom.video/calls/722636897' },
